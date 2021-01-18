@@ -1,0 +1,61 @@
+@import "variables";
+
+/* default */
+body {
+  font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+
+  a{
+    text-decoration: none;
+  }
+
+  .body_container{
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* header */
+.header{
+  .header_title{
+    text-align: center;
+    height: 4rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    margin: 1rem 0 2rem 0;
+    .header_maintitle{
+      font-family: "Lora", serif;
+      font-size: 1.8rem;
+      font-weight: lighter;
+    }
+    .header_sentence{
+      font-size: 0.8rem;
+      color: gray;
+    }
+  }
+  .header_link{
+    display: flex;
+    justify-content: space-between;
+    border-top: solid 1px gray;
+    border-bottom: solid 1px gray;
+    padding: 1rem 0.5rem;
+    a{
+      font-size: 0.8rem;
+      font-weight: lighter;
+      color: gray;
+      margin: 0 0.5rem;
+    }
+    .link_left{
+
+    }
+    .link_right{
+
+    }
+  }
+}
