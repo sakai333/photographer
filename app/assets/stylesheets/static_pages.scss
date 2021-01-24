@@ -1,7 +1,30 @@
+@import "variables";
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .home_container{
+  .select_container{
+    .select_form{
+      display: flex;
+      justify-content: space-around;
+      width: 40%;
+      margin: 0 auto 1rem auto;
+      .select_genre{
+        margin-right: 3rem;
+      }
+      .select_title{
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 4rem;
+        background-color: $silk;
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
   .posts_container{
     display: flex;
     flex-wrap: wrap;
@@ -10,8 +33,49 @@
     .photo_container{
       width: 294px;
       margin-bottom: 6px;
+      position: relative;
+      cursor: pointer;
       img{
         width: 100%;
+        z-index: 1;
+      }
+      .photo_info{
+        z-index: 2;
+        height: 2rem;
+        width: 100%;
+        background-color: rgba(0,0,0,0.5);
+        position: absolute;
+        bottom: 2px;
+        visibility: hidden;
+        opacity: 0;
+        transition-duration: 0.3s;
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        line-height: 2rem;
+        .left_item{
+          display: flex;
+          margin-left: 1rem;
+          .good, .comment{
+            font-size: 1.2rem;
+            i{
+              margin-right: 0.5rem;
+            }
+          }
+          .good{
+            margin-right: 1rem;
+          }
+        }
+        .date{
+          font-size: 0.8rem;
+          margin-right: 0.5rem;
+        }
+      }
+      &:hover{
+        .photo_info{
+          visibility: visible;
+          opacity: 1;
+        }
       }
     }
   }
