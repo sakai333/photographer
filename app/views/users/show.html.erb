@@ -1,7 +1,23 @@
 <% provide(:title, "HOME") %>
 <div class="users_show_container">
   <div class="profile_container">
-    <%= image_tag("/sample/sample10.jpeg", class: "profile_img")%>
+    <div class="upper_item">
+      <%= image_tag("/sample/sample10.jpeg", class: "profile_img")%>
+      <div class="right_item">
+        <div class="user_name">Sakai Kenta</div>
+      </div>
+    </div>
+    <div class="lower_item">
+      <div class="user_genre">
+        <div class="genre_tag silk marker_silk2">写真ジャンル</div>
+        <div class="genre_content content">ポートレート・風景・家族</div>
+      </div>
+      <div class="user_camera">
+        <div class="camera_tag marker_silk2">使用機材</div>
+        <div class="camera_body content"><span class="title_tag">ボディ</span>Canon6D</div>
+        <div class="camera_lens content"><span class="title_tag">レンズ</span>SIGMA 24-105mm F4・Canon 50mm F1.8</div>
+      </div>
+    </div>
   </div>
   <div class="posts_container">
   </div>

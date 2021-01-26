@@ -2,22 +2,17 @@
 
 /* default */
 body {
-  font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    Meiryo,
-    sans-serif;
-
-  a{
-    text-decoration: none;
-  }
-
+  font-family: 'Lato', 'Noto Sans JP', 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  font-weight: 300;
   .body_container{
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+a{
+  text-decoration: none;
 }
 
 /* header */
@@ -38,6 +33,7 @@ body {
     .header_sentence{
       font-size: 0.8rem;
       color: gray;
+      font-weight: lighter;
     }
   }
   .header_link{
