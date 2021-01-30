@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "variables";
+@import "mixin";
 
 /* users#show */
 .users_show_container{
@@ -73,9 +74,23 @@
         margin-bottom: 2rem;
       }
       .user_camera{
+        margin-bottom: 2rem;
         .camera_tag{
         }
-      }  
+      }
     }
+    .comment{
+      white-space: pre-wrap;
+      background-color: $paper;
+      padding: 1rem;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+    }
+  }
+  .posts_container{
+    @include posts_container_style
+  }
+  .new_post{
+    @include new_post_style
   }
 }

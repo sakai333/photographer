@@ -47,6 +47,10 @@ a{
       font-weight: lighter;
       color: gray;
       margin: 0 0.5rem;
+      &:hover{
+        color: black;
+        font-weight: bold;
+      }
     }
     .link_left{
 
