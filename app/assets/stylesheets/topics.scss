@@ -6,13 +6,7 @@
   margin: auto;
   position: relative;
   .index_title{
-    text-align: center;
-    background-color: $silk;
-    width: 100px;
-    line-height: 30px;
-    border-radius: 15px;
-    margin: 0 auto;
-    padding: 0 1rem;
+    @include heading_style
   }
   .new_topic{
     position: absolute;

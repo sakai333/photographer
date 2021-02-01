@@ -77,3 +77,13 @@
     }
   }
 }
+
+@mixin heading_style{
+  text-align: center;
+  background-color: $silk;
+  width: 150px;
+  line-height: 30px;
+  border-radius: 15px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

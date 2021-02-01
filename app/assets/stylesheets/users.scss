@@ -94,3 +94,29 @@
     @include new_post_style
   }
 }
+
+/* users#new */
+.signup_container{
+  width: 600px;
+  margin: 0 auto;
+  .title{
+    @include heading_style;
+    margin-bottom: 1rem;
+  }
+  .form{
+    margin-bottom: 1rem;
+    label{
+      background: linear-gradient(transparent 60%, $silk 0%);
+      padding: 0 0.5rem;
+      font-weight: bold;
+    }
+  }
+  .btn{
+    display: block;
+    width: 100px;
+    margin: 2rem auto 1rem;
+  }
+  .login{
+    text-align: center;
+  }
+}
