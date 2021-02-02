@@ -2,6 +2,7 @@
 <div class="signup_container">
   <div class="title">新規登録</div>
   <%= form_with(model: @user, local: true) do |f| %>
+    <%= render 'shared/error_messages' %>
     <div class="form">
       <%= f.label :name, "ユーザー名" %>
       <%= f.text_field :name, class: 'form-control' %>

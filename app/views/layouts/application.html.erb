@@ -15,6 +15,7 @@
     <div class="body_container">
       <%= render "layouts/header" %>
       <%= yield %>
+      <%= debug(params) if Rails.env.development? %>
     </div>
   </body>
 </html>

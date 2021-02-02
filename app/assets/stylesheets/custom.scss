@@ -60,3 +60,18 @@ a{
     }
   }
 }
+
+/* miscellaneous */
+.debug_dump {
+  width: 100%;
+  margin-top: 5rem;
+  border: 1px dashed;
+  padding: 1rem;
+}
+
+/* error_messages style */
+#error_explanation{
+  li{
+    color: red;
+  }
+}
