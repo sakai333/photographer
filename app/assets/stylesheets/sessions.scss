@@ -1,0 +1,7 @@
+@import "variables";
+@import "mixin";
+
+/* sessions#new */
+.login_container{
+  @include form_style;
+}

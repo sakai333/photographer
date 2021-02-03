@@ -15,7 +15,15 @@
           <div class="follow_num">フォロー<span class="bold">22</span>人</div>
           <div class="follower_num">フォロワー<span class="bold">333</span>人</div>
         </div>
-        <div class="follow_btn"><span>フォローする</span><i class="fas fa-envelope-open"></i></div>
+        <div class="user_action">
+          <% if current_user == @user %>
+            <%= link_to "ログアウト", logout_path, method: :delete, class: "logout_btn" %>
+            <i class="fas fa-cog"></i>
+          <% else %>
+            <div class="follow_btn">フォローする</div>
+            <i class="fas fa-envelope-open"></i>
+          <% end %>
+        </div>  
       </div>
     </div>
     <div class="lower_item">

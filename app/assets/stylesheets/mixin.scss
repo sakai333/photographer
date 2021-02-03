@@ -87,3 +87,39 @@
   margin: 0 auto;
   padding: 0 1rem;
 }
+
+@mixin form_style{
+  width: 600px;
+  margin: 0 auto;
+  .title{
+    @include heading_style;
+    margin-bottom: 1rem;
+  }
+  .form{
+    margin-bottom: 1rem;
+    label{
+      background: linear-gradient(transparent 60%, $silk 0%);
+      padding: 0 0.5rem;
+      font-weight: bold;
+    }
+  }
+  .btn{
+    display: block;
+    width: 100px;
+    margin: 2rem auto 1rem;
+  }
+  .login{
+    text-align: center;
+  }
+}
+
+@mixin profile_btn_style{
+  display: inline-block;
+  background-color: $silk;
+  color: white;
+  padding: 0 0.5rem;
+  line-height: 2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+}
