@@ -1,0 +1,44 @@
+@import "variables";
+@import "mixin";
+
+/* posts#index */
+.posts_index_container{
+  .select_container{
+    .select_form{
+      display: flex;
+      justify-content: space-around;
+      width: 40%;
+      margin: 0 auto 1rem auto;
+      select{
+        height: 2rem;
+        width: 8rem;
+        font-weight: lighter;
+      }
+      .select_genre{
+        margin-right: 3rem;
+      }
+      .select_title{
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 4rem;
+        background-color: $silk;
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+      }
+    }
+  }
+  .posts_container{
+    @include posts_container_style
+  }
+  .new_post{
+    @include new_post_style
+  }
+}
+
+/* posts#new */
+.posts_new_container{
+  @include form_style;
+}
