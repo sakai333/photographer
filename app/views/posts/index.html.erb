@@ -13,7 +13,7 @@
     <% end %>
   </div>
   <div class="posts_container">
-    <div class="photo_container">
+    <div id="open" class="photo_container">
       <%= image_tag("/sample/sample01.jpg", class: "sample_photo")%>
       <div class="photo_info">
         <div class="left_item">
@@ -61,3 +61,23 @@
     </div>
   </div>
 </div>
+
+<!-- Modal -->
+<!-- 
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <%= image_tag("/sample/sample01.jpg", class: "sample_photo")%>
+    </div>
+  </div>
+</div>
+-->
+
+<div id="mask" class="hidden"></div>
+<div id="modal" class="hidden">
+  <div class="modal_container">
+    <%= image_tag("/sample/sample01.jpg", class: "sample_photo")%>
+  </div>
+</div>
+
+
