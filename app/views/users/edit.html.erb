@@ -1,0 +1,26 @@
+<% provide(:title, "users#edit") %>
+<div class="users_edit_container">
+  <div class="title">プロフィール編集</div>
+  <%= form_with(model: @user, local: true) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <div class="form">
+      <%= f.label :name, "ユーザー名" %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="form">
+      <%= f.label :email, "メールアドレス" %>
+      <%= f.email_field :email, class: 'form-control' %>
+    </div>
+    <div class="form">
+      <%= f.label :image, "写真" %>
+      <%= f.text_field :image, class: 'form-control' %>
+    </div>
+    <div class="form">
+      <%= f.label :commeent, "コメント" %>
+      <%= f.text_area :comment, class: 'form-control' %>
+    </div>
+    <div class="submit_btn">
+      <%= f.submit "登録", class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>

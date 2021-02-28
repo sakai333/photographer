@@ -1,0 +1,12 @@
+require:
+  - rubocop-airbnb
+
+inherit_from:
+  - .rubocop_airbnb.yml
+  - .rubocop_todo.yml
+
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'db/**/*'

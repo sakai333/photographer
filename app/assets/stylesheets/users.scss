@@ -95,3 +95,11 @@
 .signup_container{
   @include form_style;
 }
+
+/* users#edit */
+.users_edit_container{
+  @include form_style;
+  .title{
+    width: 200px;
+  }
+}
