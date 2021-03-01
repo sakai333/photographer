@@ -102,11 +102,18 @@
       padding: 0 0.5rem;
       font-weight: bold;
     }
+    .font_light{
+      font-weight: lighter;
+    }
   }
   .btn{
     display: block;
     width: 100px;
     margin: 2rem auto 1rem;
+  }
+  .file_upload{
+    display: block;
+    font-weight: lighter;
   }
   .login{
     text-align: center;

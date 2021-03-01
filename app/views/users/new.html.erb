@@ -5,19 +5,19 @@
     <%= render 'shared/error_messages' %>
     <div class="form">
       <%= f.label :name, "ユーザー名" %>
-      <%= f.text_field :name, class: 'form-control' %>
+      <%= f.text_field :name, class: 'form-control font_light' %>
     </div>
     <div class="form">
       <%= f.label :email, "メールアドレス" %>
-      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.email_field :email, class: 'form-control font_light' %>
     </div>
     <div class="form">
       <%= f.label :password, "パスワード" %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control font_light' %>
     </div>
     <div class="form">
       <%= f.label :password_confirmation, "パスワード確認" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.password_field :password_confirmation, class: 'form-control font_light' %>
     </div>
     <div class="submit_btn">
       <%= f.submit "登録", class: "btn btn-success" %>

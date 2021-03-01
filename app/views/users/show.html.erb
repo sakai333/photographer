@@ -2,9 +2,13 @@
 <div class="users_show_container">
   <div class="profile_container">
     <div class="upper_item">
-      <%= image_tag("/sample/sample10.jpeg", class: "profile_img")%>
+      <% if @user.image? %>
+        <%= image_tag @user.image.url, class: "profile_img" %>
+      <% else %>
+        <%= image_tag "/noimage.jpg", class: "profile_img" %>
+      <% end %>
       <div class="right_item">
-        <div class="user_name">Sakai Kenta</div>
+        <div class="user_name"><%= @user.name %></div>
         <div class="user_info">
           <div class="user_prize">
             <div class="prize"><i class="fas fa-award gold"></i>×<span class="bold">1</span></div>
@@ -18,7 +22,9 @@
         <div class="user_action">
           <% if current_user == @user %>
             <%= link_to "ログアウト", logout_path, method: :delete, class: "logout_btn" %>
-            <i class="fas fa-cog"></i>
+            <%= link_to edit_user_path(current_user), class: "link_style" do%>
+              <i class="fas fa-cog"></i>
+            <% end %>  
           <% else %>
             <div class="follow_btn">フォローする</div>
             <i class="fas fa-envelope-open"></i>
@@ -29,15 +35,22 @@
     <div class="lower_item">
       <div class="user_genre">
         <div class="genre_tag silk marker_silk2">写真ジャンル</div>
-        <div class="genre_content content">ポートレート・風景・家族</div>
+        <div class="genre_container">
+        <% @user.genres.each do |genre| %>
+          <div class="genre_tag"><%= genre.name %></div>
+        <% end %>
+        </div>
       </div>
-      <div class="user_camera">
-        <div class="camera_tag marker_silk2">使用機材</div>
-        <div class="camera_body content"><span class="title_tag">ボディ</span>Canon6D</div>
-        <div class="camera_lens content"><span class="title_tag">レンズ</span>SIGMA 24-105mm F4・Canon 50mm F1.8</div>
-      </div>
+      <% if @user.camera %>
+        <div class="user_camera">
+          <div class="camera_tag marker_silk2">使用カメラ</div>
+          <div class="camera_body content"><%= @user.camera %></div>
+        </div>
+      <% end %>  
     </div>
-    <div class="comment">自然と田舎の風景の写真がメインです。&NewLine;最近はポートレートとPhotoshop加工にも挑戦中なので、得意な方は是非アドバイスください。</div>
+    <% if @user.comment %>
+      <div class="comment"><%= @user.comment %></div>
+    <% end %>  
   </div>
   <div class="posts_container">
     <div class="photo_container">

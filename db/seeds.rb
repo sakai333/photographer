@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+%W[ポートレート 風景 家族 カップル グルメ ファッション 旅行 自然 星空].each { |a| Genre.create(name: a) }

@@ -8,17 +8,6 @@
   padding-right: 0.5rem;
 }
 
-.title_tag{
-  border-radius: 5px;
-  border: 1px solid;
-  line-height: 1rem;
-  width: 2.5rem;
-  display: inline-block;
-  font-size: 0.6rem;
-  text-align: center;
-  margin-right: 0.5rem;
-}
-
 .marker_silk2{
   border-bottom: solid 2px $silk;
   font-weight: 500;
@@ -28,5 +17,35 @@
 .bold{
   font-weight: bold;
   padding: 0 0.5rem;
+}
+
+.genre_container{
+  display: flex;
+  margin-top: 0.5rem;
+  .genre_tag{
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    border: solid 1px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+  }
+}
+
+.check_flex_container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  .check_container{
+    width: 25%;
+    height: 2rem;
+    line-height: 2rem;
+    .check_box{
+      display: inline-block;
+      width: 2rem;
+    }
+    .check_text{
+      display: inline-block;
+    }
+  }
 }
 

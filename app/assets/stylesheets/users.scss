@@ -48,10 +48,13 @@
         }
         .user_action{
           margin-top: 1rem;
-          display: inline-flex;
+          display: flex;
           .follow_btn, .logout_btn{
             @include profile_btn_style;
             margin-right: 1rem;
+          }
+          a{
+            text-decoration: none;
           }
           i{
             display: inline;
