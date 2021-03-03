@@ -22,24 +22,19 @@
   <div class="my_comment_container">
     <div class="content"><%= post.content %></div>
   </div>
-  <div class="comment_container">
-    <div class="comment_user">
-      <%= image_tag "/sample/sample10.jpeg", class: "profile_photo" %>
-      <div class="name">Sakai Kenta</div>
-      <div class="date">2021/01/24</div>
-    </div>
-    <div class="content">めっちゃ素敵ですね！&NewLine;どんなレタッチしてるんですか？</div>
+  <div id="comments_area">
+    <%= render partial: 'comments/index', locals: { comments: @comments } %>
   </div>
   <div class="comment_container">
     <div class="comment_user">
-      <%= image_tag("/sample/sample10.jpeg", class: "profile_photo")%>
-      <div class="name">Sakai Kenta</div>
+      <%= image_tag current_user.image.thumb.url , class: "profile_photo" %>
+      <div class="name"><%= current_user.name %></div>
       <div class="date"><%= Date.current.strftime("%Y/%m/%d") %></div>
     </div>
     <div class="new_comment">
-    <%= form_with(model: @user, local: true) do |f| %>
+    <%= form_with model: [@post, @comment] do |f| %>
       <div class="form">
-        <%= f.text_area :name, placeholder: "新規コメント", class: 'form-control text_area' %>
+        <%= f.text_area :comment_content, placeholder: "新規コメント", class: 'form-control text_area', id: "text_form" %>
       </div>
       <div class="submit_btn">
         <%= f.submit "送信", class: "btn btn-success" %>

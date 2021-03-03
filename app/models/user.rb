@@ -7,10 +7,11 @@ class User < ApplicationRecord
                     uniqueness: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-  has_many :microposts, dependent: :destroy
   mount_uploader :image, ImageUploader
+  has_many :microposts, dependent: :destroy
   has_many :genre_users, dependent: :destroy
   has_many :genres, through: :genre_users
-  accepts_nested_attributes_for :genre_users, allow_destroy: true
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  accepts_nested_attributes_for :genre_users, allow_destroy: true
 end

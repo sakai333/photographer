@@ -21,41 +21,10 @@
           <div class="good"><i class="fas fa-thumbs-up"></i>100</div>
           <div class="comment"><i class="fas fa-comment"></i>21</div>
         </div>
-        <div class="date">2021/01/24</div>
+        <div class="date"><%= post.created_at.strftime('%Y/%m/%d') %></div>
       </div>
     　<% end %>
     <% end %>
-    <div class="photo_container"><%= image_tag("/sample/sample02.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample03.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample04.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample05.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample06.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample07.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample08.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample01.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample02.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample03.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample04.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample05.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample06.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample07.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample08.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample01.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample02.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample03.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample04.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample05.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample06.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample07.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample08.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample01.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample02.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample03.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample04.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample05.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample06.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample07.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample08.jpg", class: "sample_photo")%></div>
   </div>
 </div>
 <%= link_to new_post_path do %>
@@ -66,9 +35,7 @@
   </div>
 <% end %>
 
-
 <!-- Modal -->
 <div id="mask" class="hidden"></div>
-<div id="modal" class="hidden">
-</div>
+<div id="modal" class="hidden"></div>
 

@@ -1,0 +1,5 @@
+var comments_area = document.getElementById('comments_area');
+comments_area.innerHTML = '<%= escape_javascript(render partial: "index", locals: { comments: @comment.post.comments }) %>';
+
+var text_form = document.getElementById('text_form');
+text_form.value = '';

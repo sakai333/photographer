@@ -47,7 +47,7 @@
 
 #modal {
   position: absolute;   /* スクロールで移動しないようmodalの位置を固定します */
-  top: 10vh;
+  top: 5vh;
   /* 以下3行：モーダルを左右中央揃えにする方法 */
   left: 0;
   right: 0;
@@ -61,7 +61,7 @@
     width: 580px;
     padding: 10px;
     border-radius: 10px;
-    max-height: 80vh;
+    max-height: 90vh;
     overflow-y: auto;
     .profile_container{
       display: flex;
