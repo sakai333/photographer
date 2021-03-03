@@ -32,7 +32,4 @@
   .posts_container{
     @include posts_container_style
   }
-  .new_post{
-    @include new_post_style
-  }
 }
