@@ -14,7 +14,7 @@
   </div>
   <div class="posts_container">
     <div id="open" class="photo_container">
-      <%= image_tag("/sample/sample01.jpg", class: "sample_photo")%>
+      <%= image_tag @post.image.url, class: "sample_photo" %>
       <div class="photo_info">
         <div class="left_item">
           <div class="good"><i class="fas fa-thumbs-up"></i>100</div>
@@ -56,11 +56,13 @@
     <div class="photo_container"><%= image_tag("/sample/sample08.jpg", class: "sample_photo")%></div>
   </div>
 </div>
-<div class="new_post">
-  <div class="post_btn">
-    <i class="fas fa-plus"></i>
+<%= link_to new_post_path do %>
+  <div class="new_post">
+    <div class="post_btn">
+      <i class="fas fa-plus"></i>
+    </div>
   </div>
-</div>
+<% end %>
 
 <!-- Modal -->
 
@@ -73,7 +75,7 @@
       <div class="date">2021/01/24</div>
     </div>
     <div class="main_photo">
-      <%= image_tag("/sample/sample01.jpg")%>
+      <%= image_tag @post.image.url %>
     </div>
     <div class="photo_info">
       <div class="left_item">
@@ -92,7 +94,7 @@
     </div>
     <div class="comment_container">
       <div class="comment_user">
-        <%= image_tag("/sample/sample10.jpeg", class: "profile_photo")%>
+        <%= image_tag "/sample/sample10.jpeg", class: "profile_photo" %>
         <div class="name">Sakai Kenta</div>
         <div class="date">2021/01/24</div>
       </div>

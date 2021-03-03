@@ -95,9 +95,11 @@
     <div class="photo_container"><%= image_tag("/sample/sample07.jpg", class: "sample_photo")%></div>
     <div class="photo_container"><%= image_tag("/sample/sample08.jpg", class: "sample_photo")%></div>
   </div>
+</div>
+<%= link_to new_post_path do %>
   <div class="new_post">
     <div class="post_btn">
       <i class="fas fa-plus"></i>
     </div>
   </div>
-</div>
+<% end %>
