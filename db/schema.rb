@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_03_025503) do
+ActiveRecord::Schema.define(version: 2021_03_03_055639) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "genre_posts", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "genre_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_genre_posts_on_genre_id"
+    t.index ["post_id"], name: "index_genre_posts_on_post_id"
+  end
 
   create_table "genre_users", force: :cascade do |t|
     t.bigint "user_id"
@@ -53,6 +62,7 @@ ActiveRecord::Schema.define(version: 2021_03_03_025503) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "genre_posts", "genres"
   add_foreign_key "genre_users", "genres"
   add_foreign_key "posts", "users"
 end

@@ -13,16 +13,18 @@
     <% end %>
   </div>
   <div class="posts_container">
-    <div id="open" class="photo_container">
-      <%= image_tag @post.image.url, class: "sample_photo" %>
-      <div class="photo_info">
+    <% @posts.each do |post| %>
+      <%= link_to post_path(post.id), remote: true, class: "photo_container" do %>
+        <%= image_tag post.image.url, class: "sample_photo" %>
+        <div class="photo_info">
         <div class="left_item">
           <div class="good"><i class="fas fa-thumbs-up"></i>100</div>
           <div class="comment"><i class="fas fa-comment"></i>21</div>
         </div>
         <div class="date">2021/01/24</div>
       </div>
-    </div>
+    　<% end %>
+    <% end %>
     <div class="photo_container"><%= image_tag("/sample/sample02.jpg", class: "sample_photo")%></div>
     <div class="photo_container"><%= image_tag("/sample/sample03.jpg", class: "sample_photo")%></div>
     <div class="photo_container"><%= image_tag("/sample/sample04.jpg", class: "sample_photo")%></div>
@@ -64,60 +66,9 @@
   </div>
 <% end %>
 
-<!-- Modal -->
 
+<!-- Modal -->
 <div id="mask" class="hidden"></div>
 <div id="modal" class="hidden">
-  <div class="modal_container">
-    <div class="profile_container">
-      <%= image_tag("/sample/sample10.jpeg", class: "profile_photo")%>
-      <div class="name">Sakai Kenta</div>
-      <div class="date">2021/01/24</div>
-    </div>
-    <div class="main_photo">
-      <%= image_tag @post.image.url %>
-    </div>
-    <div class="photo_info">
-      <div class="left_item">
-        <div class="good"><i class="fas fa-thumbs-up"></i>100</div>
-        <div class="comment"><i class="fas fa-comment"></i>21</div>
-      </div>
-      <div class="adress">〒523-8533 滋賀県近江八幡市北之庄町６１５−１</div>
-    </div>
-    <div class="genre_container">
-      <div class="genre_tag">風景</div>
-      <div class="genre_tag">自然</div>
-      <div class="genre_tag">建築</div>
-    </div>
-    <div class="my_comment_container">
-      <div class="content">前から行ってみたかった藤森照信のラコリーナ近江八幡の草屋根。&NewLine;実際もっと枯れかかっていたけど、Lightroomでレタッチ。&NewLine;&NewLine;使用機材：Canon6D　Sigma 24ー105mm&NewLine;F値：8.0　シャッター速度：1/200　ISO感度：200</div>
-    </div>
-    <div class="comment_container">
-      <div class="comment_user">
-        <%= image_tag "/sample/sample10.jpeg", class: "profile_photo" %>
-        <div class="name">Sakai Kenta</div>
-        <div class="date">2021/01/24</div>
-      </div>
-      <div class="content">めっちゃ素敵ですね！&NewLine;どんなレタッチしてるんですか？</div>
-    </div>
-    <div class="comment_container">
-      <div class="comment_user">
-        <%= image_tag("/sample/sample10.jpeg", class: "profile_photo")%>
-        <div class="name">Sakai Kenta</div>
-        <div class="date"><%= Date.current.strftime("%Y/%m/%d") %></div>
-      </div>
-      <div class="new_comment">
-      <%= form_with(model: @user, local: true) do |f| %>
-        <div class="form">
-          <%= f.text_area :name, placeholder: "新規コメント", class: 'form-control text_area' %>
-        </div>
-        <div class="submit_btn">
-          <%= f.submit "送信", class: "btn btn-success" %>
-        </div>
-      <% end %>
-      </div>
-    </div>
-  </div>
 </div>
-
 

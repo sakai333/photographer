@@ -7,6 +7,17 @@
       <%= f.file_field :image, class: 'file_upload font_light' %>
     </div>
     <div class="form">
+      <%= f.label :genre, "写真ジャンル" %>
+      <div class="check_flex_container">
+        <%= f.collection_check_boxes(:genre_ids, @genres, :id, :name) do |t| %>
+          <div class="check_container">
+            <%= t.check_box class: "check_box" %>
+            <div class="check_text"><%= t.text %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="form">
       <%= f.label :place, "撮影場所" %>
       <%= f.text_field :place, class: 'form-control font_light' %>
     </div>
