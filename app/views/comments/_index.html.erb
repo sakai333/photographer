@@ -4,6 +4,11 @@
       <div class="comment_user">
         <%= image_tag comment.user.image.thumb.url, class: "profile_photo" %>
         <div class="name"><%= comment.user.name %></div>
+        <% if current_user == comment.user %>
+          <%= link_to post_comment_path(comment.post_id, comment.id), class:"delete", method: :delete, remote: true do %>
+            <i class="fas fa-backspace"></i>
+          <% end %>  
+        <% end %>
         <div class="date"><%= comment.created_at.strftime('%Y/%m/%d') %></div>
       </div>
       <div class="content"><%= comment.comment_content %></div>
