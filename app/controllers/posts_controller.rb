@@ -26,7 +26,11 @@ class PostsController < ApplicationController
   
   def index
     @posts = Post.all
-    @post = Post.first
+  end
+
+  def destroy
+    Post.find(params[:id]).destroy
+    redirect_to root_url
   end
 
   private

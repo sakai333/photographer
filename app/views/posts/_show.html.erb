@@ -2,6 +2,11 @@
   <div class="profile_container">
     <%= image_tag post.user.image.thumb.url , class: "profile_photo" %>
     <div class="name"><%= post.user.name %></div>
+    <% if current_user == post.user %>
+      <%= link_to post_path(post.id), class:"delete", method: :delete, data: {confirm: "削除しますか？"} do %>
+        <i class="fas fa-backspace"></i>
+      <% end %>  
+    <% end %>
     <div class="date"><%= post.created_at.strftime('%Y/%m/%d') %></div>
   </div>
   <div class="main_photo">
