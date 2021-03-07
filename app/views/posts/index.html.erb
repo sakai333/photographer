@@ -1,5 +1,6 @@
 <% provide(:title, "posts#index") %>
 <div class="posts_index_container">
+  <!-- selecter section -->
   <div class="select_container">
     <%= form_with model: @hoge, class: "select_form" do |f| %>
       <div class="select_genre">
@@ -12,6 +13,7 @@
       </div>
     <% end %>
   </div>
+  <!-- posts display section -->
   <div class="posts_container">
     <% @posts.each do |post| %>
       <%= link_to post_path(post.id), remote: true, class: "photo_container" do %>
@@ -19,7 +21,7 @@
         <div class="photo_info">
         <div class="left_item">
           <div class="good"><i class="fas fa-thumbs-up"></i>100</div>
-          <div class="comment"><i class="fas fa-comment"></i>21</div>
+          <div class="comment"><i class="fas fa-comment"></i><%= post.comments.count %></div>
         </div>
         <div class="date"><%= post.created_at.strftime('%Y/%m/%d') %></div>
       </div>
@@ -27,6 +29,7 @@
     <% end %>
   </div>
 </div>
+<!-- new post btn -->
 <%= link_to new_post_path do %>
   <div class="new_post">
     <div class="post_btn">
@@ -34,7 +37,6 @@
     </div>
   </div>
 <% end %>
-
 <!-- Modal -->
 <div id="mask" class="hidden"></div>
 <div id="modal" class="hidden"></div>

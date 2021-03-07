@@ -52,50 +52,24 @@
       <div class="comment"><%= @user.comment %></div>
     <% end %>  
   </div>
+  <!-- posts display section -->
   <div class="posts_container">
-    <div class="photo_container">
-      <%= image_tag("/sample/sample01.jpg", class: "sample_photo")%>
-      <div class="photo_info">
+    <% @posts.each do |post| %>
+      <%= link_to post_path(post.id), remote: true, class: "photo_container" do %>
+        <%= image_tag post.image.url, class: "sample_photo" %>
+        <div class="photo_info">
         <div class="left_item">
           <div class="good"><i class="fas fa-thumbs-up"></i>100</div>
-          <div class="comment"><i class="fas fa-comment"></i>21</div>
+          <div class="comment"><i class="fas fa-comment"></i><%= post.comments.count %></div>
         </div>
-        <div class="date">2021/01/24</div>
+        <div class="date"><%= post.created_at.strftime('%Y/%m/%d') %></div>
       </div>
-    </div>
-    <div class="photo_container"><%= image_tag("/sample/sample02.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample03.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample04.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample05.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample06.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample07.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample08.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample01.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample02.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample03.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample04.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample05.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample06.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample07.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample08.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample01.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample02.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample03.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample04.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample05.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample06.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample07.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample08.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample01.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample02.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample03.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample04.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample05.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample06.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample07.jpg", class: "sample_photo")%></div>
-    <div class="photo_container"><%= image_tag("/sample/sample08.jpg", class: "sample_photo")%></div>
+    　<% end %>
+    <% end %>
   </div>
 </div>
+
+<!-- new post btn -->
 <%= link_to new_post_path do %>
   <div class="new_post">
     <div class="post_btn">
@@ -103,3 +77,6 @@
     </div>
   </div>
 <% end %>
+<!-- Modal -->
+<div id="mask" class="hidden"></div>
+<div id="modal" class="hidden"></div>

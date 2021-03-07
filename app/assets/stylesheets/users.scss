@@ -98,8 +98,22 @@
 
 /* users#edit */
 .users_edit_container{
+  position: relative;
   @include form_style;
   .title{
     width: 200px;
+  }
+  .user_delete{
+    position: absolute;
+    right: 0;
+    top: 0;
+    line-height: 30px;
+    vertical-align: middle;
+    color: $silk;
+    text-decoration: none;
+    span{
+      margin-right: 0.2rem;
+      font-weight: bold;
+    }
   }
 }
