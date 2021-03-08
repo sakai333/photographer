@@ -1,0 +1,27 @@
+<div class="posts_container">
+  <% posts.each do |post| %>
+    <div class="photo_container">
+      <%= link_to post_path(post.id), remote: true do %>
+        <%= image_tag post.image.url, class: "sample_photo" %>
+      <% end %>
+      <div class="photo_info">
+        <div class="left_item">
+          <div class="good">
+            <% if post.liked_by?(current_user) %>
+              <%= link_to post_like_path(post.id, post.likes.ids), method: :delete do %>
+                <i class="fas fa-thumbs-up like"></i>
+              <% end %>
+            <% else %>
+              <%= link_to post_likes_path(post.id), method: :post do %>
+                <i class="fas fa-thumbs-up unlike"></i>
+              <% end %>
+            <% end %>
+            <span><%= post.likes.count %></span>
+          </div>
+          <div class="comment"><i class="fas fa-comment"></i><%= post.comments.count %></div>
+        </div>
+        <div class="date"><%= post.created_at.strftime('%Y/%m/%d') %></div>
+      </div>
+    </div>
+  <% end %>
+</div>

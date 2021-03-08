@@ -12,5 +12,7 @@ class User < ApplicationRecord
   has_many :genres, through: :genre_users
   has_many :posts, dependent: :destroy
   has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_posts, through: :likes, source: :post
   accepts_nested_attributes_for :genre_users, allow_destroy: true
 end

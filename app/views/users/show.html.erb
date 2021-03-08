@@ -53,20 +53,7 @@
     <% end %>  
   </div>
   <!-- posts display section -->
-  <div class="posts_container">
-    <% @posts.each do |post| %>
-      <%= link_to post_path(post.id), remote: true, class: "photo_container" do %>
-        <%= image_tag post.image.url, class: "sample_photo" %>
-        <div class="photo_info">
-        <div class="left_item">
-          <div class="good"><i class="fas fa-thumbs-up"></i>100</div>
-          <div class="comment"><i class="fas fa-comment"></i><%= post.comments.count %></div>
-        </div>
-        <div class="date"><%= post.created_at.strftime('%Y/%m/%d') %></div>
-      </div>
-    　<% end %>
-    <% end %>
-  </div>
+  <%= render "shared/posts_index", posts: @posts %>
 </div>
 
 <!-- new post btn -->

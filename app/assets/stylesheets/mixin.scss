@@ -38,7 +38,7 @@
           }
         }
         .good{
-          margin-right: 1rem;
+          @include good_style(white);
         }
       }
       .date{
@@ -106,4 +106,17 @@
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
+}
+
+@mixin good_style($unlike_color: black){
+  margin-right: 1rem;
+  a{
+    text-decoration: none;
+  }
+  .like{
+    color: red;
+  }
+  .unlike{
+    color: $unlike_color;
+  }
 }

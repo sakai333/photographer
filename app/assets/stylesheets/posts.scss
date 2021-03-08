@@ -99,7 +99,7 @@
           }
         }
         .good{
-          margin-right: 1rem;
+          @include good_style;
         }
       }
       .adress{
