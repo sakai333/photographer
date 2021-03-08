@@ -1,0 +1,4 @@
+var like_section = document.getElementById('like_section');
+var like_section_2 = document.getElementById('like_section_2');
+like_section.innerHTML = '<%= escape_javascript(render partial: "shared/like", locals: { post: @post }) %>';
+like_section_2.innerHTML = '<%= escape_javascript(render partial: "shared/like", locals: { post: @post }) %>';
