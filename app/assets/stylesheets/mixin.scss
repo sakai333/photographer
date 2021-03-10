@@ -38,7 +38,7 @@
           }
         }
         .good{
-          @include good_style(white);
+          @include good_style(white, coral);
         }
       }
       .date{
@@ -108,13 +108,13 @@
   text-decoration: none;
 }
 
-@mixin good_style($unlike_color: black){
+@mixin good_style($unlike_color: black, $like_color: red){
   margin-right: 1rem;
   a{
     text-decoration: none;
   }
   .like{
-    color: red;
+    color: $like_color;
   }
   .unlike{
     color: $unlike_color;

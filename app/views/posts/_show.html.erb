@@ -1,7 +1,7 @@
 <div class="modal_container">
   <div class="profile_container">
     <%= image_tag post.user.image.thumb.url , class: "profile_photo" %>
-    <div class="name"><%= post.user.name %></div>
+    <%= link_to post.user.name, user_path(post.user.id), class:"name" %>
     <% if current_user == post.user %>
       <%= link_to post_path(post.id), class:"delete", method: :delete, data: {confirm: "削除しますか？"} do %>
         <i class="fas fa-backspace"></i>
@@ -16,7 +16,7 @@
     <div class="left_item">
       <div class="good">
         <!-- like section -->
-        <div id="like_section_2">
+        <div id="like_section_modal">
           <%= render "shared/like", post: post %> 
         </div>
       </div>
