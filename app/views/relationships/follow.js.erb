@@ -1,0 +1,4 @@
+var follow_section = document.getElementById('follow_section');
+var follower_num = document.getElementById('follower_num');
+follow_section.innerHTML = '<%= escape_javascript(render partial: "users/follow_section", locals: { user: @user }) %>';
+follower_num.innerHTML = '<%= escape_javascript(render partial: "users/follower_num", locals: { user: @user }) %>';
