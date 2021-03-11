@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   has_many :genre_posts, dependent: :destroy
   has_many :genres, through: :genre_posts
   has_many :comments, dependent: :destroy
-  has_many :likes
+  has_many :likes, dependent: :destroy
   has_many :users, through: :likes
   default_scope -> { order(created_at: :desc) }
   validates :user_id, presence: true
