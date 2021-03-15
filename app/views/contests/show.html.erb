@@ -1,0 +1,28 @@
+<% provide(:title, "users#show") %>
+<div class="contests_show_container">
+  <div class="info_container">
+    <div class="contest_name">星空フォトコンテスト</div>
+    <div class="condition">
+      <div class="marker_silk">主催者</div>
+      <div class="content host">
+        <%= image_tag "/sample/sample10.jpeg", class: "host_img" %>
+        <div class="host_name">Sakai Kenta</div>
+      </div>
+    </div>
+    <div class="condition">
+      <div class="marker_silk">投票期間</div>
+      <div class="content">2021/3/15　〜　2021/04/01</div>
+    </div>
+    <div class="condition">
+      <div class="marker_silk">投稿枚数制限</div>
+      <div class="content">１人３枚まで</div>
+    </div>
+    <div class="comment">星空フォトコンテストを開催します。&NewLine;期限は、2021年4月1日。投稿数は一人一枚まで。投票権は一人三件までとします。&NewLine;また、加工はレタッチまで、切り合わせ加工等は禁止とします。</div>
+  </div>
+  <!-- posts display section -->
+  <%= render "shared/posts_index", posts: @posts %>
+</div>
+
+<!-- Modal -->
+<div id="mask" class="hidden"></div>
+<div id="modal" class="hidden"></div>
