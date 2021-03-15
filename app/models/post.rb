@@ -9,6 +9,7 @@ class Post < ApplicationRecord
   validates :user_id, presence: true
   validates :content, presence: true, length: { maximum: 250 }
   mount_uploader :image, ImageUploader
+  validates :image, presence: true
 
   def liked_by?(user)
     if user
