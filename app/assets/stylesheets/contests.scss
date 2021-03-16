@@ -26,6 +26,7 @@
     line-height: 30px;
     font-weight: bold;
     color: $silk;
+    text-decoration: none;
     i{
       margin-right: 0.5rem;
     }
@@ -141,4 +142,9 @@
   .posts_container{
     @include posts_container_style
   }
+}
+
+/* posts#new */
+.contests_new_container{
+  @include form_style;
 }

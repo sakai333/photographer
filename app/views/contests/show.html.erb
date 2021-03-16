@@ -1,28 +1,36 @@
 <% provide(:title, "users#show") %>
 <div class="contests_show_container">
   <div class="info_container">
-    <div class="contest_name">星空フォトコンテスト</div>
+    <div class="contest_name"><%= @contest.name %></div>
     <div class="condition">
       <div class="marker_silk">主催者</div>
       <div class="content host">
-        <%= image_tag "/sample/sample10.jpeg", class: "host_img" %>
-        <div class="host_name">Sakai Kenta</div>
+        <%= image_tag @host_user.image.thumb.url, class: "host_img" %>
+        <div class="host_name"><%= @host_user.name %></div>
       </div>
     </div>
     <div class="condition">
       <div class="marker_silk">投票期間</div>
-      <div class="content">2021/3/15　〜　2021/04/01</div>
+      <div class="content"><%= @contest.created_at.strftime('%Y/%m/%d') %>　〜　<%= @contest.period.strftime('%Y/%m/%d') %></div>
     </div>
     <div class="condition">
       <div class="marker_silk">投稿枚数制限</div>
       <div class="content">１人３枚まで</div>
     </div>
-    <div class="comment">星空フォトコンテストを開催します。&NewLine;期限は、2021年4月1日。投稿数は一人一枚まで。投票権は一人三件までとします。&NewLine;また、加工はレタッチまで、切り合わせ加工等は禁止とします。</div>
+    <div class="comment"><%= @contest.condition %></div>
   </div>
   <!-- posts display section -->
   <%= render "shared/posts_index", posts: @posts %>
 </div>
 
+<!-- new post btn -->
+<%= link_to new_post_path do %>
+  <div class="new_post">
+    <div class="post_btn">
+      <i class="fas fa-plus"></i>
+    </div>
+  </div>
+<% end %>
 <!-- Modal -->
 <div id="mask" class="hidden"></div>
 <div id="modal" class="hidden"></div>

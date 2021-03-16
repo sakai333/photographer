@@ -21,7 +21,8 @@ class User < ApplicationRecord
                                   foreign_key: "followed_id",
                                   dependent:   :destroy
   has_many :following, through: :active_relationships, source: :followed
-  has_many :followers, through: :passive_relationships                               
+  has_many :followers, through: :passive_relationships  
+  has_many :contests                             
   accepts_nested_attributes_for :genre_users, allow_destroy: true
 
   # ユーザーをフォローする

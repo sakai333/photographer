@@ -4,7 +4,9 @@
     <div class="holding">開催中のコンテスト</div>
     <div class="holded">過去のコンテスト</div>
   </div>
-  <div class="new_content"><i class="fas fa-plus"></i>新規コンテスト</div>
+  <%= link_to new_contest_path, class: "new_content" do %>
+    <i class="fas fa-plus"></i>新規コンテスト
+  <% end %>
   <div class="content">
     <div class="posted_date">
       <p class="date_tag">Until,</p>
