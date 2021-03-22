@@ -10,13 +10,11 @@
     display: flex;
     width: 500px;
     margin: 0 auto;
-    .holding{
+    .holding, .holded{
       @include heading_style;
       width: 200px;
-    }
-    .holded{
-      @include heading_style;
-      width: 200px;
+      color: black;
+      text-decoration: none;
     }
   }
   .new_contest{

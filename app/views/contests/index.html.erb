@@ -1,12 +1,14 @@
 <% provide(:title, "contests#index") %>
 <div class="contests_index_container">
   <div class="index_title">
-    <div class="holding">開催中のコンテスト</div>
-    <div class="holded">過去のコンテスト</div>
+    <%= link_to "開催中のコンテスト", contests_path, class: "holding" %>
+    <%= link_to "過去のコンテスト", closed_contests_path, method: :POST, remote: true, class: "holded" %>
   </div>
   <%= link_to new_contest_path, class: "new_contest" do %>
     <i class="fas fa-plus"></i>新規コンテスト
   <% end %>
-  <!-- contest_index_section -->
-  <%= render @contests %>
+  <!-- contests_index_section -->
+  <div id="contests_index_section">
+    <%= render @contests %>
+  </div>
 </div>

@@ -1,0 +1,2 @@
+var contests = document.getElementById('contests_index_section');
+contests.innerHTML = '<%= escape_javascript(render partial: "contest", collection: @contests) %>';

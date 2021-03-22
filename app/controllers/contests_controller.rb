@@ -1,6 +1,13 @@
 class ContestsController < ApplicationController
+  before_action :timepass,only:[:index]
+
   def index
-    @contests = Contest.all
+    @contests = Contest.where(status: 0).order(period: "ASC")
+  end
+
+  def index_closed
+    @contests = Contest.where(status: 1).order(period: "DESC")
+    render :contests
   end
 
   def show
