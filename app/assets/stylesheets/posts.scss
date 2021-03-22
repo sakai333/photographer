@@ -109,6 +109,25 @@
         color: $pale-gold;
       }
     }
+    .contest_container{
+      margin-top: 1rem;
+      .vote_container{
+        margin-top: 0.5rem;
+        .btn{
+          display: inline-block;
+          margin: 0 0.5rem;
+        }
+        .vote_limit{
+          font-size: 0.8rem;
+          display: inline-block;
+          line-height: 38px;
+          span{
+            font-weight: bold;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
     .my_comment_container{
       margin-top: 0.5rem;
       background-color: $silk_light;

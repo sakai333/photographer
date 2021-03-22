@@ -32,6 +32,16 @@
   <div class="my_comment_container">
     <div class="content"><%= post.content %></div>
   </div>
+  <!-- contest section -->
+  <% if post.contest %>
+    <div class="contest_container">
+      <div class="contest_name marker_silk"><%= post.contest.name %></div>
+      <div class="vote_container">
+        <div class="btn btn-primary">投票する</div>
+        <div class="vote_limit">このコンテストに対して、あと <span>3件</span> 投票できます。</div>
+      </div>
+    </div>
+  <% end %>
   <div id="comments_area">
     <%= render partial: 'comments/index', locals: { comments: @comments } %>
   </div>
