@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @genres = Genre.all
+    @contest = Contest.find(params[:contest_id])
   end
   
   def create
@@ -35,6 +36,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:place, :image, :content,  { genre_ids: [] })
+    params.require(:post).permit(:place, :image, :content,  { genre_ids: [] }, :contest_id)
   end
 end

@@ -2,6 +2,15 @@
 <div class="posts_new_container">
   <div class="title">新規投稿</div>
   <%= form_with(model: @post, local: true) do |f| %>
+    <% if @contest %>
+      <div class="form">
+        <%= f.label :contest_id, "コンテスト名" %>
+        <div class="contest_name">
+          <%= @contest.name %>
+        </div>
+        <%= f.hidden_field :contest_id, value: params[:contest_id] %>
+      </div>
+    <% end %>
     <div class="form">
       <%= f.label :image, "写真" %>
       <%= f.file_field :image, class: 'file_upload font_light' %>

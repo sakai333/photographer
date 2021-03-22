@@ -24,7 +24,7 @@
 </div>
 
 <!-- new post btn -->
-<%= link_to new_post_path do %>
+<%= link_to new_post_path(contest_id: params[:id]) do %>
   <div class="new_post">
     <div class="post_btn">
       <i class="fas fa-plus"></i>
