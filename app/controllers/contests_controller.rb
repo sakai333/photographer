@@ -1,11 +1,12 @@
 class ContestsController < ApplicationController
   def index
+    @contests = Contest.all
   end
 
   def show
     @contest = Contest.find(params[:id])
     @host_user = @contest.user
-    @posts = Post.all
+    @posts = Post.where(contest_id: @contest.id)
   end
 
   def new
@@ -26,4 +27,5 @@ class ContestsController < ApplicationController
   def contest_params
     params.require(:contest).permit(:name, :image, :period, :condition)
   end
+  
 end

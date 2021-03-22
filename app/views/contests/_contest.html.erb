@@ -1,0 +1,20 @@
+<div class="contest">
+  <div class="posted_date">
+    <p class="date_tag">Until,</p>
+    <p><%= contest.period.strftime('%Y/%m/%d') %></p>
+  </div>
+  <div class="contest_img">
+    <%= image_tag contest.image.thumb.url %>
+  </div>
+  <div class="topic_content">
+    <%= link_to contest.name, contest_path(contest.id), class: "topic_title" %>
+    <div class="topic_info"><%= contest.condition %></div>
+    <div class="topic_eval">
+      <div class="post_num"><i class="fas fa-images"></i><%= contest.posts.count %></div>
+    </div>
+    <div class="topic_user">
+      <%= image_tag contest.user.image.thumb.url, class: "topic_user_img" %>
+      <div class="user_name"><%= contest.user.name %></div>
+    </div>
+  </div>
+</div>

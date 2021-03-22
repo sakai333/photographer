@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  belongs_to :contest
   has_many :genre_posts, dependent: :destroy
   has_many :genres, through: :genre_posts
   has_many :comments, dependent: :destroy

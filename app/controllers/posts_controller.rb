@@ -2,13 +2,19 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
     @genres = Genre.all
-    @contest = Contest.find(params[:contest_id])
+    if params[:contest_id]
+      @contest = Contest.find(params[:contest_id])
+    end
   end
   
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      redirect_to posts_path
+      if @post.contest_id
+        redirect_to contest_path(@post.contest_id)
+      else  
+        redirect_to posts_path
+      end  
     else
       render 'new'
     end
