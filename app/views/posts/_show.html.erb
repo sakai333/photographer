@@ -33,7 +33,7 @@
     <div class="content"><%= post.content %></div>
   </div>
   <!-- contest section -->
-  <% if post.contest %>
+  <% if post.contest && post.contest.status == "open" %>
     <div class="contest_container">
       <div class="contest_name marker_silk"><%= post.contest.name %></div>
       <div class="vote_container">

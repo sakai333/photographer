@@ -2,6 +2,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
+    @num_first = @posts.where(prize: 1).count
+    @num_second = @posts.where(prize: 2).count
+    @num_third = @posts.where(prize: 3).count
   end
 
   def new

@@ -5,41 +5,50 @@
       <i class="fas fa-award gold"></i>
       <span>第1位</span>
     </div>
-    <div class="prized_user">
-      <%= image_tag @test_post.user.image.thumb.url %>
-      <%= link_to @test_post.user.name, user_path(@test_post.user.id), class:"name" %>
-      <span>『東京タワー』</span>
-    </div>
-    <div class="prized_post">
-      <%= image_tag @test_post.image.url %>
-    </div>
+    <% if @prize_posts.first %>
+      <div class="prized_user">
+        <%= image_tag @prize_posts.first.user.image.thumb.url %>
+        <%= link_to @prize_posts.first.user.name, user_path(@prize_posts.first.user.id), class:"name" %>
+      </div>
+      <div class="prized_post">
+        <%= image_tag @prize_posts.first.image.url %>
+      </div>
+    <% else %>
+      <div class="none_award">該当なし</div>
+    <% end %>
   </div>
   <div class="prize">
     <div class="prize_title">
       <i class="fas fa-award silver"></i>
       <span>第2位</span>
     </div>
-    <div class="prized_user">
-      <%= image_tag @test_post.user.image.thumb.url %>
-      <%= link_to @test_post.user.name, user_path(@test_post.user.id), class:"name" %>
-      <span>『東京タワー』</span>
-    </div>
-    <div class="prized_post">
-      <%= image_tag @test_post.image.url %>
-    </div>
+    <% if @prize_posts.second %>
+      <div class="prized_user">
+        <%= image_tag @prize_posts.second.user.image.thumb.url %>
+        <%= link_to @prize_posts.second.user.name, user_path(@prize_posts.second.user.id), class:"name" %>
+      </div>
+      <div class="prized_post">
+        <%= image_tag @prize_posts.second.image.url %>
+      </div>
+    <% else %>
+      <div class="none_award">該当なし</div>
+    <% end %>  
   </div>
   <div class="prize">
     <div class="prize_title">
       <i class="fas fa-award blonze"></i>
       <span>第3位</span>
     </div>
-    <div class="prized_user">
-      <%= image_tag @test_post.user.image.thumb.url %>
-      <%= link_to @test_post.user.name, user_path(@test_post.user.id), class:"name" %>
-      <span>『東京タワー』</span>
-    </div>
-    <div class="prized_post">
-      <%= image_tag @test_post.image.url %>
-    </div>
+    <% if @prize_posts.third %>
+      <div class="prized_user">
+        <%= image_tag @prize_posts.third.user.image.thumb.url %>
+        <%= link_to @prize_posts.third.user.name, user_path(@prize_posts.third.user.id), class:"name" %>
+      </div>
+      <div class="prized_post">
+        <%= image_tag @prize_posts.third.image.url %>
+      </div>
+    <% else %>
+      <div class="none_award">該当なし</div>
+    <% end %>
   </div>
 </div>

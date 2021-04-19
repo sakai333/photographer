@@ -11,9 +11,9 @@
         <div class="user_name"><%= @user.name %></div>
         <div class="user_info">
           <div class="user_prize">
-            <div class="prize"><i class="fas fa-award gold"></i>×<span class="bold">1</span></div>
-            <div class="prize"><i class="fas fa-award silver"></i>×<span class="bold">4</span></div>
-            <div class="prize"><i class="fas fa-award blonze"></i>×<span class="bold">5</span></div>
+            <div class="prize"><i class="fas fa-award gold"></i>×<span class="bold"><%= @num_first %></span></div>
+            <div class="prize"><i class="fas fa-award silver"></i>×<span class="bold"><%= @num_second %></span></div>
+            <div class="prize"><i class="fas fa-award blonze"></i>×<span class="bold"><%= @num_third %></span></div>
           </div>
           <div class="post_num">投稿<span class="bold"><%= @user.posts.count %></span>件</div>
           <div class="follow_num">フォロー<span class="bold"><%= @user.following.count %></span>人</div>
