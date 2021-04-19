@@ -18,7 +18,7 @@
     <div class="form">
       <%= f.label :genre, "写真ジャンル" %>
       <div class="check_flex_container">
-        <%= f.collection_check_boxes(:genre_ids, @genres, :id, :name) do |t| %>
+        <%= f.collection_check_boxes(:genre_ids, Genre.all, :id, :name) do |t| %>
           <div class="check_container">
             <%= t.check_box class: "check_box" %>
             <div class="check_text"><%= t.text %></div>
@@ -39,3 +39,13 @@
     </div>
   <% end %>
 </div>
+
+<% if @post.errors.any? %>
+  <div class="alert alert-warning">
+    <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

@@ -77,6 +77,11 @@
       margin-bottom: 2rem;
     }
   }
+  .posts_title{
+    text-align: center;
+    font-weight: bold;
+    border-bottom: solid 2px $silk;
+  }
   .posts_container{
     @include posts_container_style
   }

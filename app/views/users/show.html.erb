@@ -37,14 +37,16 @@
       </div>
     </div>
     <div class="lower_item">
-      <div class="user_genre">
-        <div class="genre_tag silk marker_silk2">写真ジャンル</div>
-        <div class="genre_container">
-        <% @user.genres.each do |genre| %>
-          <div class="genre_tag"><%= genre.name %></div>
-        <% end %>
+      <% if @user.genres.present? %>
+        <div class="user_genre">
+          <div class="genre_tag silk marker_silk2">写真ジャンル</div>
+          <div class="genre_container">
+          <% @user.genres.each do |genre| %>
+            <div class="genre_tag"><%= genre.name %></div>
+          <% end %>
+          </div>
         </div>
-      </div>
+      <% end %>
       <% if @user.camera %>
         <div class="user_camera">
           <div class="camera_tag marker_silk2">使用カメラ</div>
@@ -57,7 +59,10 @@
     <% end %>  
   </div>
   <!-- posts display section -->
-  <%= render "shared/posts_index", posts: @posts %>
+  <% if @user.posts.present? %>
+    <div class="posts_title">投稿一覧</div>
+    <%= render "shared/posts_index", posts: @posts %>
+  <% end %>
 </div>
 
 <!-- new post btn -->
