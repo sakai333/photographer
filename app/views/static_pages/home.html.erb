@@ -1,5 +1,10 @@
 <% provide(:title, "HOME") %>
 <div class="home_container">
-  <div class="bgimg"></div>
-  <%= image_tag "/pg_test1.png" %>
+  <div class="bgimg">
+    <%= image_tag "/home_bg.png" %>
+    <div class="main_title">Photographer</div>
+    <div class="sub_title">写真好きのための気ままなコミュニティーサイト。</div>
+    <%= link_to "ログイン", login_path, class: "signin_btn home_btn" %>
+    <%= link_to "新規登録", signup_path, class: "signup_btn home_btn" %>
+  </div>
 </div>

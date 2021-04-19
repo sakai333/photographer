@@ -1,5 +1,6 @@
 class ContestsController < ApplicationController
   before_action :timepass,only:[:index]
+  before_action :logged_in_user
 
   def index
     @contests = Contest.where(status: 0).order(period: "ASC")

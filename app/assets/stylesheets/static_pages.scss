@@ -2,9 +2,54 @@
 @import "mixin";
 
 .home_container{
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url(/003-Brown-Paper.png);
+  background-repeat: repeat;
   .bgimg{
-    background-image: url("/pg_test1.png");
-    height: 100vh;
-    background-size: cover;
+    position: absolute;
+    width: 800px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 20vh;
+    .main_title{
+      position: absolute;
+      font-family: "Lora", serif;
+      font-size: 3.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 100px;
+      color: white;
+    }
+    .sub_title{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 180px;
+      color: white;
+    }
+    .signin_btn{
+      top: 250px;
+    }
+    .signup_btn{
+      top: 300px;
+    }
+    .home_btn{
+      color: black;
+      text-decoration: none;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      border: solid 1px;
+      padding: 2px 0px;
+      width: 100px;
+      text-align: center;
+      border-radius: 5px;
+      &:hover{
+        background-color: rgba(255, 255, 255, 0.5);
+        transition: 0.2s;
+      }
+    }
   }
 }

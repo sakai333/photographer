@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :logged_in_user, only: [:show, :index, :edit, :update, :destroy]
+
   def show
     @user = User.find(params[:id])
     @posts = @user.posts
