@@ -1,0 +1,45 @@
+<div class="award_works">
+  <div class="award_title">受賞作品</div>
+  <div class="prize">
+    <div class="prize_title">
+      <i class="fas fa-award gold"></i>
+      <span>第1位</span>
+    </div>
+    <div class="prized_user">
+      <%= image_tag @test_post.user.image.thumb.url %>
+      <%= link_to @test_post.user.name, user_path(@test_post.user.id), class:"name" %>
+      <span>『東京タワー』</span>
+    </div>
+    <div class="prized_post">
+      <%= image_tag @test_post.image.url %>
+    </div>
+  </div>
+  <div class="prize">
+    <div class="prize_title">
+      <i class="fas fa-award silver"></i>
+      <span>第2位</span>
+    </div>
+    <div class="prized_user">
+      <%= image_tag @test_post.user.image.thumb.url %>
+      <%= link_to @test_post.user.name, user_path(@test_post.user.id), class:"name" %>
+      <span>『東京タワー』</span>
+    </div>
+    <div class="prized_post">
+      <%= image_tag @test_post.image.url %>
+    </div>
+  </div>
+  <div class="prize">
+    <div class="prize_title">
+      <i class="fas fa-award blonze"></i>
+      <span>第3位</span>
+    </div>
+    <div class="prized_user">
+      <%= image_tag @test_post.user.image.thumb.url %>
+      <%= link_to @test_post.user.name, user_path(@test_post.user.id), class:"name" %>
+      <span>『東京タワー』</span>
+    </div>
+    <div class="prized_post">
+      <%= image_tag @test_post.image.url %>
+    </div>
+  </div>
+</div>

@@ -20,16 +20,22 @@
     <div class="comment"><%= @contest.condition %></div>
   </div>
   <!-- posts display section -->
-  <%= render "shared/posts_index", posts: @posts %>
+  <% if @contest.status == "open" %>
+    <%= render "shared/posts_index", posts: @posts %>
+  <% else %>
+    <%= render "close_contest" %>
+  <% end %>
 </div>
 
 <!-- new post btn -->
-<%= link_to new_post_path(contest_id: params[:id]) do %>
-  <div class="new_post">
-    <div class="post_btn">
-      <i class="fas fa-plus"></i>
+<% if @contest.status == "open" %>
+  <%= link_to new_post_path(contest_id: params[:id]) do %>
+    <div class="new_post">
+      <div class="post_btn">
+        <i class="fas fa-plus"></i>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 <!-- Modal -->
 <div id="mask" class="hidden"></div>

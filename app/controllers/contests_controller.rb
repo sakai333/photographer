@@ -14,6 +14,7 @@ class ContestsController < ApplicationController
     @contest = Contest.find(params[:id])
     @host_user = @contest.user
     @posts = Post.where(contest_id: @contest.id)
+    @test_post = Post.first
   end
 
   def new

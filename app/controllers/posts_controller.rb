@@ -24,6 +24,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comments = @post.comments.order(created_at: :desc)
+    if @post.contest
+      @vote = Vote.find_by(user_id: current_user, post_id: @post, contest_id: @post.contest.id)
+      @voted_num = Vote.where(user_id: current_user, contest_id: @post.contest.id).count
+    end
     respond_to do |format|
       format.html
       format.js

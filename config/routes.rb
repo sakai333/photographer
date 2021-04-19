@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root   'posts#index'
   get    '/about',   to: 'static_pages#about'
+  get    '/home',   to: 'static_pages#home'
   get    '/signup',  to: 'users#new'
   get    '/login',   to: 'sessions#new'
   post   '/login',   to: 'sessions#create'
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   end
   resources :topics
   resources :contests
+  resources :votes, only: [:create, :destroy]
   post 'follow/:id' => 'relationships#follow', as: 'follow' 
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
   post 'closed_contests' => 'contests#index_closed'

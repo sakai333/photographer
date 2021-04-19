@@ -37,8 +37,16 @@
     <div class="contest_container">
       <div class="contest_name marker_silk"><%= post.contest.name %></div>
       <div class="vote_container">
-        <div class="btn btn-primary">投票する</div>
-        <div class="vote_limit">このコンテストに対して、あと <span>3件</span> 投票できます。</div>
+        <% if @vote %>
+          <%= link_to vote_path(post_id: post.id, contest_id: post.contest.id), method: :delete, data: {confirm: "投票を取り消しますか？"} do %>
+            <div class="btn btn-secondary">投票済</div>
+          <% end %>
+        <% else %>
+          <%= link_to votes_path(post_id: post.id, contest_id: post.contest.id), method: :post do %>
+            <div class="btn btn-primary">投票する</div>
+          <% end %>
+        <% end %>
+        <div class="vote_limit">このコンテストに対して、あと <span><%= 3 - Vote.where(user_id: current_user, contest_id: @post.contest.id).count %>件</span> 投票できます。</div>
       </div>
     </div>
   <% end %>

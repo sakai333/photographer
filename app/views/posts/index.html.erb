@@ -2,16 +2,6 @@
 <div class="posts_index_container">
   <!-- selecter section -->
   <div class="select_container">
-    <%= form_with model: @hoge, class: "select_form" do |f| %>
-      <div class="select_genre">
-        <div class="select_title">ジャンル</div>
-        <%= f.select :faculty, ["風景","ポートレート","料理","旅行","日常"], include_blank: "選択して下さい" %>
-      </div>
-      <div class="select_order">
-        <div class="select_title">並び替え</div>
-        <%= f.select :faculty, ["新着順","いいね数順"] %>
-      </div>
-    <% end %>
   </div>
   <!-- posts display section -->
   <%= render "shared/posts_index", posts: @posts %>
