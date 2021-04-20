@@ -27,8 +27,9 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   # Process files as they are uploaded:
-  process :resize_to_limit => [1000, 1000]
   process :convert => 'jpg'
+  
+  process :resize_to_limit => [1000, 1000]
 
   version :thumb do
     process :resize_to_limit => [300, 300]
