@@ -1,6 +1,12 @@
 @import "variables";
 @import "mixin";
 
+/* topics#new */
+.topics_new_container{
+  @include form_style;
+}
+
+/* topics#index */
 .topics_index_container{
   width: 800px;
   margin: auto;
@@ -15,6 +21,7 @@
     line-height: 30px;
     font-weight: bold;
     color: $silk;
+    text-decoration: none;
     i{
       margin-right: 0.5rem;
     }

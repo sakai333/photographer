@@ -1,0 +1,21 @@
+<% provide(:title, "topics#new") %>
+<div class="topics_new_container">
+  <div class="title">新規トピック</div>
+  <%= form_with(model: @topic, local: true) do |f| %>
+    <div class="form">
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title, class: 'form-control font_light' %>
+    </div>
+    <div class="form">
+      <%= f.label :image, "サムネイル写真" %>
+      <%= f.file_field :image, class: 'file_upload font_light' %>
+    </div>
+    <div class="form">
+      <%= f.label :content, "コンテント" %>
+      <%= f.text_area :content, class: 'form-control font_light' %>
+    </div>
+    <div class="submit_btn">
+      <%= f.submit "登録", class: "btn btn-success" %>
+    </div>
+  <% end %>
+</div>

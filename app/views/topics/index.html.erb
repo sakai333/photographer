@@ -1,7 +1,9 @@
 <% provide(:title, "topics#index") %>
 <div class="topics_index_container">
   <div class="index_title">トピック一覧</div>
-  <div class="new_topic"><i class="fas fa-plus"></i>トピックを作成</div>
+  <%= link_to new_topic_path, class: "new_topic" do %>
+    <i class="fas fa-plus"></i>トピックを作成
+  <% end %>
   <div class="topic">
     <div class="posted_date">
       <p class="date_tag">Posted,</p>
