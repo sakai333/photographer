@@ -25,7 +25,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments.order(created_at: :desc)
+    @comments = @post.comments.order(created_at: :asc)
     if @post.contest
       @vote = Vote.find_by(user_id: current_user, post_id: @post, contest_id: @post.contest.id)
       @voted_num = Vote.where(user_id: current_user, contest_id: @post.contest.id).count
@@ -42,7 +42,7 @@ class PostsController < ApplicationController
 
   def destroy
     Post.find(params[:id]).destroy
-    redirect_to root_url
+    redirect_to posts_path
   end
 
   private

@@ -1,0 +1,55 @@
+<% provide(:title, "topics#index") %>
+<div class="topics_show_container">
+  <div class="topic_title">
+    <%= @topic.title %>
+    <% if current_user == @topic.user %>
+      <%= link_to topic_path(@topic.id), class:"delete", method: :delete, data: {confirm: "削除しますか？"} do %>
+        <i class="fas fa-backspace"></i>
+      <% end %>  
+    <% end %>
+  </div>
+  <div class="topic_info">
+    <div class="date">Posted, <%= @topic.created_at.strftime('%Y/%m/%d') %></div>
+    <div class="user_info">
+      <%= image_tag @topic.user.image.thumb.url , class: "profile_photo" %>
+      <%= link_to @topic.user.name, user_path(@topic.user.id), class:"name" %>
+    </div>
+  </div>
+  <div class="main_photo">
+    <%= image_tag @topic.image.url %>
+  </div>
+  <div class="photo_info">
+    <div class="left_item">
+      <div class="good">
+        <!-- like section -->
+        <div id="like_section_modal">
+          <%= render "shared/like", post: @post %> 
+        </div>
+      </div>
+      <div class="comment"><i class="fas fa-comment"></i><%= @post.comments.count %></div>
+    </div>
+  </div>
+  <div class="my_comment_container">
+    <div class="content"><%= @topic.content %></div>
+  </div>
+  <div id="comments_area">
+    <%= render partial: 'comments/index', locals: { comments: @comments } %>
+  </div>
+  <div class="comment_container">
+    <div class="comment_user">
+      <%= image_tag current_user.image.thumb.url , class: "profile_photo" %>
+      <div class="name"><%= current_user.name %></div>
+      <div class="date"><%= Date.current.strftime("%Y/%m/%d") %></div>
+    </div>
+    <div class="new_comment">
+    <%= form_with model: [@post, @comment] do |f| %>
+      <div class="form">
+        <%= f.text_area :comment_content, placeholder: "新規コメント", class: 'form-control text_area', id: "text_form" %>
+      </div>
+      <div class="submit_btn">
+        <%= f.submit "送信", class: "btn btn-success" %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>

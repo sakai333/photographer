@@ -22,7 +22,8 @@ class User < ApplicationRecord
                                   dependent:   :destroy
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships  
-  has_many :contests
+  has_many :contests, dependent: :destroy
+  has_many :topics, dependent: :destroy
   has_many :votes, dependent: :destroy                         
   accepts_nested_attributes_for :genre_users, allow_destroy: true
 
