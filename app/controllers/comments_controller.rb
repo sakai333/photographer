@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
   def create
-    if params[:topic_id]　#投稿写真へのコメント
+    if params[:topic_id]
       @topic = Topic.find(params[:topic_id])
       @comment = @topic.comments.build(comment_params)
       @comment.user_id = current_user.id
       @comment.save
       @comments = @comment.topic.comments
-    elsif params[:post_id]　#掲示板へのコメント
+    elsif params[:post_id]
       @post = Post.find(params[:post_id])
       @comment = @post.comments.build(comment_params)
       @comment.user_id = current_user.id
