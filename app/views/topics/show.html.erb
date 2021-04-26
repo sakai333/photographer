@@ -9,25 +9,14 @@
     <% end %>
   </div>
   <div class="topic_info">
-    <div class="date">Posted, <%= @topic.created_at.strftime('%Y/%m/%d') %></div>
     <div class="user_info">
       <%= image_tag @topic.user.image.thumb.url , class: "profile_photo" %>
       <%= link_to @topic.user.name, user_path(@topic.user.id), class:"name" %>
     </div>
+    <div class="date">Posted, <%= @topic.created_at.strftime('%Y/%m/%d') %></div>
   </div>
   <div class="main_photo">
     <%= image_tag @topic.image.url %>
-  </div>
-  <div class="photo_info">
-    <div class="left_item">
-      <div class="good">
-        <!-- like section -->
-        <div id="like_section_modal">
-          <%= render "shared/like", post: @post %> 
-        </div>
-      </div>
-      <div class="comment"><i class="fas fa-comment"></i><%= @post.comments.count %></div>
-    </div>
   </div>
   <div class="my_comment_container">
     <div class="content"><%= @topic.content %></div>
@@ -42,7 +31,7 @@
       <div class="date"><%= Date.current.strftime("%Y/%m/%d") %></div>
     </div>
     <div class="new_comment">
-    <%= form_with model: [@post, @comment] do |f| %>
+    <%= form_with model: [@topic, @comment] do |f| %>
       <div class="form">
         <%= f.text_area :comment_content, placeholder: "新規コメント", class: 'form-control text_area', id: "text_form" %>
       </div>

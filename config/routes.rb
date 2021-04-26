@@ -11,7 +11,9 @@ Rails.application.routes.draw do
     resources :comments
     resources :likes, only: [:create, :destroy]
   end
-  resources :topics
+  resources :topics do
+    resources :comments
+  end
   resources :contests
   resources :votes, only: [:create, :destroy]
   post 'follow/:id' => 'relationships#follow', as: 'follow' 

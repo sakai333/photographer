@@ -2,13 +2,14 @@ class TopicsController < ApplicationController
   before_action :logged_in_user
   
   def index
+    @topics = Topic.all
   end
 
   def show
     @post = Post.last
     @topic = Topic.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments.order(created_at: :desc)
+    @comments = @topic.comments.order(created_at: :desc)
   end
 
   def new

@@ -4,42 +4,5 @@
   <%= link_to new_topic_path, class: "new_topic" do %>
     <i class="fas fa-plus"></i>トピックを作成
   <% end %>
-  <div class="topic">
-    <div class="posted_date">
-      <p class="date_tag">Posted,</p>
-      <p>2021/01/30</p>
-    </div>
-    <%= image_tag("/sample/sample11.jpeg", class: "topic_img")%>
-    <div class="topic_content">
-      <div class="topic_title">星空写真のアドバイスをください</div>
-      <div class="topic_info">星空写真に挑戦したくて、撮ってみました。撮影にはフルサイズ、単焦点50mm/F1.8レンズを使用しました。設定はF値1.8、SS15s、ISO1600です。ロケーションはかなり良かったと思うのですが、イマイチ星がくっきり映りませんでした。ISO感度を上げる、SSをもっと上げると空が明るくなり雰囲気が微妙でした。撮影方法・設定等どのようにしたらもっといい感じになりますか？アドバイスいただきたいです。</div>
-      <div class="topic_eval">
-        <div class="good"><i class="fas fa-thumbs-up"></i>3</div>
-        <div class="comment"><i class="fas fa-comment"></i>21</div>
-      </div>
-      <div class="topic_user">
-        <%= image_tag("/sample/sample10.jpeg", class: "topic_user_img")%>
-        <div class="user_name">Sakai Kenta</div>
-      </div>
-    </div>
-  </div>
-  <div class="topic">
-    <div class="posted_date">
-      <p class="date_tag">Posted,</p>
-      <p>2021/01/30</p>
-    </div>
-    <%= image_tag("/sample/sample11.jpeg", class: "topic_img")%>
-    <div class="topic_content">
-      <div class="topic_title">星空写真のアドバイスをください</div>
-      <div class="topic_info">星空写真に挑戦したくて、撮ってみました。撮影にはフルサイズ、単焦点50mm/F1.8レンズを使用しました。設定はF値1.8、SS15s、ISO1600です。ロケーションはかなり良かったと思うのですが、イマイチ星がくっきり映りませんでした。ISO感度を上げる、SSをもっと上げると空が明るくなり雰囲気が微妙でした。撮影方法・設定等どのようにしたらもっといい感じになりますか？アドバイスいただきたいです。</div>
-      <div class="topic_eval">
-        <div class="good"><i class="fas fa-thumbs-up"></i>3</div>
-        <div class="comment"><i class="fas fa-comment"></i>21</div>
-      </div>
-      <div class="topic_user">
-        <%= image_tag("/sample/sample10.jpeg", class: "topic_user_img")%>
-        <div class="user_name">Sakai Kenta</div>
-      </div>
-    </div>
-  </div>
+  <%= render partial: "topic", collection: @topics %>
 </div>
