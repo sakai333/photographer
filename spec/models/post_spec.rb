@@ -13,12 +13,6 @@ RSpec.describe Post, type: :model do
     expect(post.errors[:content]).to include("can't be blank")
   end
 
-  # 文章がなければ無効な状態であること
-  # describe "entering content" do
-  #   context "when entering content" do
-  #   end
-  # end
-
   # 画像がなければ無効な状態であること
   it "is invalid without a image" do
     post = FactoryBot.build(:post, image: nil)

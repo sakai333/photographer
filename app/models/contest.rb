@@ -6,7 +6,6 @@ class Contest < ApplicationRecord
   validates :name, presence: true
   validates :period, presence: true
   validates :condition, presence: true
-  validates :image, presence: true
   validates :user_id, presence: true
   has_many :votes, dependent: :destroy
 end
