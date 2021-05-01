@@ -40,6 +40,9 @@
         .good{
           @include good_style(white, coral);
         }
+        #comment_num{
+          display: inline;
+        }
       }
       .date{
         font-size: 0.8rem;

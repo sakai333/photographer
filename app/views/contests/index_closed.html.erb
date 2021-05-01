@@ -1,12 +1,12 @@
 <% provide(:title, "contests#index") %>
 <div class="contests_index_container">
-  <div class="index_title">開催中のコンテスト</div>
+  <div class="index_title">過去のコンテスト</div>
   <%= link_to new_contest_path, class: "new_contest" do %>
     <i class="fas fa-plus"></i>新規コンテスト
   <% end %>
   <div class="change_contest">
-    <span>過去のコンテストは</span>
-    <%= link_to "こちら", closed_contests_path %>
+    <span>開催中のコンテストは</span>
+    <%= link_to "こちら", contests_path %>
   </div>
   <!-- contests_index_section -->
   <% unless @contests.empty? %>
@@ -14,6 +14,6 @@
       <%= render @contests %>
     </div>
   <% else %>
-    <div class="none">現在開催中のコンテストはありません。</div>
+    <div class="none">過去のコンテストはありません。</div>
   <% end %>
 </div>

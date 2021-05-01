@@ -12,7 +12,12 @@
               <%= render "shared/like", post: post %> 
             </div>
           </div>
-          <div class="comment"><i class="fas fa-comment"></i><%= post.comments.count %></div>
+          <div class="comment">
+            <i class="fas fa-comment"></i>
+            <div id="comment_num">
+              <%= render "shared/comment_num", post: post %>
+            </div>
+          </div>
         </div>
         <div class="date"><%= post.created_at.strftime('%Y/%m/%d') %></div>
       </div>

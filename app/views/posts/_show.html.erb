@@ -3,7 +3,7 @@
     <%= image_tag post.user.image.thumb.url , class: "profile_photo" %>
     <%= link_to post.user.name, user_path(post.user.id), class:"name" %>
     <% if current_user == post.user %>
-      <%= link_to post_path(post.id), class:"delete", method: :delete, data: {confirm: "削除しますか？"} do %>
+      <%= link_to post_path(post.id), class:"delete post_delete", method: :delete, data: {confirm: "削除しますか？"} do %>
         <i class="fas fa-backspace"></i>
       <% end %>  
     <% end %>
@@ -14,13 +14,19 @@
   </div>
   <div class="photo_info">
     <div class="left_item">
+      <!-- like section -->
       <div class="good">
-        <!-- like section -->
         <div id="like_section_modal">
           <%= render "shared/like", post: post %> 
         </div>
       </div>
-      <div class="comment"><i class="fas fa-comment"></i><%= post.comments.count %></div>
+      <!-- comment section -->
+      <div class="comment">
+        <i class="fas fa-comment"></i>
+        <div id="comment_num_modal">
+          <%= render "shared/comment_num", post: post %>
+        </div>
+      </div>
     </div>
     <div class="adress"><%= post.place %></div>
   </div>

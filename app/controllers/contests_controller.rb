@@ -8,7 +8,7 @@ class ContestsController < ApplicationController
 
   def index_closed
     @contests = Contest.where(status: 1).order(period: "DESC")
-    render :contests
+    # render :contests
   end
 
   def show

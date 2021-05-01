@@ -1,5 +1,11 @@
 var comments_area = document.getElementById('comments_area');
 comments_area.innerHTML = '<%= escape_javascript(render partial: "index", locals: { comments: @comments }) %>';
 
+var comment_num = document.getElementById('comment_num');
+comment_num.innerHTML = '<%= escape_javascript(render partial: "shared/comment_num", locals: { post: @post }) %>';
+
+var comment_num_modal = document.getElementById('comment_num_modal');
+comment_num_modal.innerHTML = '<%= escape_javascript(render partial: "shared/comment_num", locals: { post: @post }) %>';
+
 var text_form = document.getElementById('text_form');
 text_form.value = '';

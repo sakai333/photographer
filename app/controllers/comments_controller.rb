@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_action :set_like
+  
   def create
     if params[:topic_id]
       @topic = Topic.find(params[:topic_id])
@@ -30,5 +32,9 @@ class CommentsController < ApplicationController
   private
   def comment_params
     params.require(:comment).permit(:comment_content, :post_id, :user_id, :topic_id)
+  end
+
+  def set_like
+    @post = Post.find(params[:post_id])
   end
 end

@@ -78,6 +78,9 @@
         .good{
           @include good_style;
         }
+        #comment_num_modal{
+          display: inline;
+        }
       }
       .adress{
         font-size: 0.8rem;

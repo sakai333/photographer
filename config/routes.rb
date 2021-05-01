@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   resources :votes, only: [:create, :destroy]
   post 'follow/:id' => 'relationships#follow', as: 'follow' 
   post 'unfollow/:id' => 'relationships#unfollow', as: 'unfollow'
-  post 'closed_contests' => 'contests#index_closed'
+  get 'closed_contests' => 'contests#index_closed'
 end

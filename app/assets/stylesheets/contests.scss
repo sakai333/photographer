@@ -7,15 +7,15 @@
   margin: auto;
   position: relative;
   .index_title{
-    display: flex;
-    width: 500px;
     margin: 0 auto;
-    .holding, .holded{
-      @include heading_style;
-      width: 200px;
-      color: black;
-      text-decoration: none;
-    }
+    @include heading_style;
+    width: 200px;
+    color: black;
+    text-decoration: none;
+  }
+  .change_contest{
+    text-align: center;
+    margin: 1rem 0;
   }
   .new_contest{
     position: absolute;
@@ -105,6 +105,11 @@
         }
       }
     }
+  }
+  .none{
+    text-align: center;
+    font-weight: bold;
+    margin: 5rem 0;
   }
 }
 
