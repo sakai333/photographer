@@ -35,7 +35,6 @@ end
 group :test do
   gem 'capybara', '>= 2.15'
   gem 'webdrivers', require: !ENV['SELENIUM_DRIVER_URL']
-  # gem 'chromedriver-helper'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

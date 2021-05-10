@@ -1,24 +1,39 @@
-# README
+# Photographer
+Photographerは写真好きのためのコミュニティーサイトです。  
+写真投稿・閲覧機能に加えて、誰でも気軽に開催・投票できるコンテスト機能、写真レビューや質問ができる掲示板機能を実装しています。
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## URL
+https://photographer-sk.herokuapp.com/
 
-Things you may want to cover:
+## 使用技術
+- フロントエンド
+  - HTML/CSS
+  - Javascript
+- バックエンド
+  - Ruby 2.5.8
+  - Ruby on Rails 5.2.4
+  - Rubocop（コード解析ツール)
+  - Rspec（テスト)
+- インフラ
+  - docker/docker-compose(テスト環境・開発環境)
+  - heroku(本番環境)
+  - PostgreSQL 11.9
+  - AWS(S3)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 基本一覧
+- 基本機能
+  - 新規登録・ログイン機能
+  - ユーザー情報編集機能(アイコン画像・ユーザー名・メールアドレス・使用カメラ・写真ジャンル)
+  - ユーザーフォロー機能（非同期通信）
+- 写真投稿機能
+  - 新規投稿（画像投稿にはcarrierwaveを使用。本番環境ではS3に保存。）
+  - 写真一覧ページから各投稿の詳細ページをmodal表示（非同期通信）
+  - コメント機能（非同期通信）
+  - いいね機能（非同期通信）
+- コンテスト機能
+  - 新規コンテスト開催機能（期限・条件を設定）
+  - 投票機能（1コンテストにつき1人3票まで投票可能）
+  - 期限になると投票を集計し結果が表示される
+- 掲示板機能
+  - 新規投稿
+  - コメント機能（非同期通信）
