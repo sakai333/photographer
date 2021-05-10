@@ -16,7 +16,7 @@
             <div class="prize"><i class="fas fa-award blonze"></i>×<span class="bold"><%= @num_third %></span></div>
           </div>
           <div class="post_num">投稿<span class="bold"><%= @user.posts.count %></span>件</div>
-          <div class="follow_num">フォロー<span class="bold"><%= @user.following.count %></span>人</div>
+          <div class="follow_num">フォロー<%= link_to @user.following.count, following_path(id: params[:id]), class: "bold" %>人</div>
           <div id="follower_num">
             <%= render "users/follower_num", user: @user %>
           </div>

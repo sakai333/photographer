@@ -1,1 +1,1 @@
-<div class="follower_num">フォロワー<span class="bold"><%= user.followers.count %></span>人</div>
+<div class="follower_num">フォロワー<%= link_to user.followers.count,follower_path(id: params[:id]), class: "bold" %>人</div>

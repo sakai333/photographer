@@ -3,8 +3,8 @@
   <!-- selecter section -->
   <div class="select_container">
     <div class="index_select">
-      <div class="all_posts select_on">全ての投稿</div>
-      <%= link_to "フォローユーザーの投稿", follow_posts_path, class: "select_off" %>
+      <%= link_to "全ての投稿", posts_path, class: " all_posts select_off" %>
+      <div class="select_on">フォローユーザーの投稿</div>
     </div>
     <div class="index_form">
     </div>
@@ -23,4 +23,3 @@
 <!-- Modal -->
 <div id="mask" class="hidden"></div>
 <div id="modal" class="hidden"></div>
-

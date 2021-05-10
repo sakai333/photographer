@@ -6,10 +6,13 @@ Rails.application.routes.draw do
   post   '/login',   to: 'sessions#create'
   delete '/logout',  to: 'sessions#destroy'
   resources :users
+  get    '/following',   to: 'users#following'
+  get    '/follower',   to: 'users#follower'
   resources :posts do
     resources :comments
     resources :likes, only: [:create, :destroy]
   end
+  get    '/follow_posts',   to: 'posts#index_follow'
   resources :topics do
     resources :comments
   end

@@ -40,6 +40,11 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def index_follow
+    # @posts = Post.where("user_id IN (?) OR user_id = ?", following_ids, id)
+    @posts = current_user.feed
+  end
+
   def destroy
     Post.find(params[:id]).destroy
     redirect_to posts_path

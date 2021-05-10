@@ -1,0 +1,5 @@
+<% provide(:title, "users#index") %>
+<div class="users_index_container">
+  <div class="index_title">ユーザー一覧</div>
+  <%= render partial: "user", collection: @users %>
+</div>
