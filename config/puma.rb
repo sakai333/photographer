@@ -40,10 +40,10 @@ plugin :tmp_restart
 # bind "unix:///myapp/tmp/sockets/puma.sock"
 # stdout_redirect "/myapp/log/puma.stdout.log", "/myapp/log/puma.stderr.log", true
 
-# app_root = ENV.fetch("RAILS_ROOT")
+app_root = ENV.fetch("RAILS_ROOT")
 # bind "unix://#{app_root}/tmp/sockets/puma.sock"
 
 # stdout_redirect "#{app_root}/log/puma.stdout.log", "#{app_root}/log/puma.stderr.log", true
 
-bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
-stdout_redirect "#{Rails.root}/log/puma.stdout.log", "#{Rails.root}/log/puma.stderr.log", true
+bind "unix://#{app_root}/tmp/sockets/puma.sock"
+stdout_redirect "#{app_root}/log/puma.stdout.log", "#{app_root}/log/puma.stderr.log", true
