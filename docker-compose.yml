@@ -1,22 +1,71 @@
+# version: '3'
+# services:
+#   db:
+#     image: postgres
+#     volumes:
+#       - ./tmp/db:/var/lib/postgresql/data
+#     environment:
+#       POSTGRES_PASSWORD: 'postgres'
+#   web:
+#     build: .
+#     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+#     volumes:
+#       - .:/myapp
+#     ports:
+#       - "3000:3000"
+#     depends_on:
+#       - db
+
 version: '3'
 services:
-  db:
-    image: postgres
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-    environment:
-      POSTGRES_PASSWORD: 'postgres'
-  web:
-    build: .
-    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+  app:
+    build:
+      context: .
+    # =========ローカルと本番切り替え===========
+    command: bundle exec puma -C config/puma.rb -e production
+    # command: bundle exec puma -C config/puma.rb
+    # ======================================  
     volumes:
       - .:/myapp
+      - public-data:/myapp/public
+      - tmp-data:/myapp/tmp
+      - log-data:/myapp/log
+    networks:
+      - myapp-network
+  # =========ローカルと本番切り替え===========    
+  #   depends_on:
+  #     - db
+  # db:
+  #   image: postgres
+  #   environment:
+  #     POSTGRES_PASSWORD: 'postgres'
+  #     # MYSQL_ROOT_PASSWORD: password
+  #     # MYSQL_USER: user
+  #     # MYSQL_PASSWORD: password
+  #     # MYSQL_DATABASE: fitO2_development
+  #   volumes:
+  #     # - db-data:/var/lib/mysql
+  #     - ./tmp/db:/var/lib/postgresql/data
+  #   networks:
+  #     - myapp-network
+  # =========ローカルと本番切り替え===========    
+  web:
+    build:
+      context: ./nginx_docker
+    volumes:
+      - public-data:/myapp/public
+      - tmp-data:/myapp/tmp
     ports:
-      - "3000:3000"
+      - 80:80
     depends_on:
-      - db
-  #     - chrome
-  # chrome:
-  #   image: selenium/standalone-chrome:latest
-  #   ports:
-  #     - 4444:4444
+      - app
+    networks:
+      - myapp-network
+volumes:
+  public-data:
+  tmp-data:
+  log-data:
+  db-data:
+networks:
+  myapp-network:
+    external: true
