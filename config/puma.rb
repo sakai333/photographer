@@ -15,8 +15,7 @@ threads threads_count, threads_count
 
 # Specifies the `environment` that Puma will run in.
 #
-# environment ENV.fetch("RAILS_ENV") { "development" }
-environment ENV.fetch("RAILS_ENV") { "production" }
+environment ENV.fetch("RAILS_ENV") { "development" }
 
 # Specifies the `pidfile` that Puma will use.
 # pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
@@ -44,9 +43,9 @@ plugin :tmp_restart
 
 
 
-# app_root = File.expand_path("../..", __FILE__)
-# bind "unix://#{app_root}/tmp/sockets/puma.sock"
-# stdout_redirect "#{app_root}/log/puma.stdout.log", "#{app_root}/log/puma.stderr.log", true
+app_root = File.expand_path("../../", __FILE__)
+bind "unix://#{app_root}/tmp/sockets/puma.sock"
+stdout_redirect "#{app_root}/log/puma.stdout.log", "#{app_root}/log/puma.stderr.log", true
 
-bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
-stdout_redirect "#{Rails.root}/log/puma.stdout.log", "#{Rails.root}/log/puma.stderr.log", true
+# bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
+# stdout_redirect "#{Rails.root}/log/puma.stdout.log", "#{Rails.root}/log/puma.stderr.log", true
