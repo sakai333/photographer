@@ -19,8 +19,9 @@ RUN apt-get update -qq && apt-get install -y build-essential nodejs yarn postgre
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
+RUN gem install bundler
 RUN bundle install
-RUN mkdir -p /myapp/tmp/sockets
+RUN mkdir -p tmp/sockets
 # COPY . /myapp
 
 # Add a script to be executed every time the container starts.
