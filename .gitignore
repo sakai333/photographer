@@ -10,7 +10,8 @@
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
-!sockets
+!/tmp/sockets
+
 !/log/.keep
 !/tmp/.keep
 
