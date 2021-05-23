@@ -39,12 +39,7 @@ services:
   #   image: postgres
   #   environment:
   #     POSTGRES_PASSWORD: 'postgres'
-  #     # MYSQL_ROOT_PASSWORD: password
-  #     # MYSQL_USER: user
-  #     # MYSQL_PASSWORD: password
-  #     # MYSQL_DATABASE: fitO2_development
   #   volumes:
-  #     # - db-data:/var/lib/mysql
   #     - ./tmp/db:/var/lib/postgresql/data
   #   networks:
   #     - myapp-network

@@ -15,14 +15,14 @@ RUN apt-get update -qq && apt-get install -y build-essential nodejs yarn postgre
 #     sh -c 'wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -' && \
 #     sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' && \
 #     apt-get update && apt-get install -y google-chrome-stable
-# RUN mkdir /myapp
+RUN mkdir /myapp
 WORKDIR /myapp
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
 RUN gem install bundler
 RUN bundle install
 RUN mkdir -p tmp/sockets
-# COPY . /myapp
+COPY . /myapp
 
 # Add a script to be executed every time the container starts.
 # COPY entrypoint.sh /usr/bin/
