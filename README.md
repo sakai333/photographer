@@ -3,7 +3,7 @@ Photographerは写真好きのためのコミュニティーサイトです。
 写真投稿・閲覧機能に加えて、誰でも気軽に開催・投票できるコンテスト機能、写真レビューや質問ができる掲示板機能を実装しています。
 
 ## URL
-https://photographer-sk.herokuapp.com/
+https://photographer-app.com
 
 ## 使用技術
 - フロントエンド
@@ -15,10 +15,9 @@ https://photographer-sk.herokuapp.com/
   - Rubocop（コード解析ツール)
   - Rspec（テスト)
 - インフラ
-  - docker/docker-compose(テスト環境・開発環境)
-  - heroku(本番環境)
+  - docker/docker-compose
+  - AWS(VPC、ACM、Route53、EC2、RDS、S3)
   - PostgreSQL 11.9
-  - AWS(S3)
 
 ## 基本一覧
 - 基本機能
