@@ -10,3 +10,30 @@ AllCops:
     - 'vendor/**/*'
     - 'bin/**/*'
     - 'db/**/*'
+    - "spec/support/*"
+    - "spec/spec_helper.rb"
+    - "spec/rails_helper.rb"
+
+Style/BlockDelimiters:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+RSpec/EmptyExampleGroup:
+  Enabled: false
+
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
+Style/MutableConstant:
+  Enabled: false
+  
+Airbnb/OptArgParameters:
+  Enabled: false
+
+Rails/HelperInstanceVariable:
+  Enabled: false
+
+Airbnb/DefaultScope:
+  Enabled: false

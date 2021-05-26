@@ -37,7 +37,7 @@ RSpec.feature "Posts", type: :feature do
     within "#like_section_modal" do
       find(".fa-thumbs-up").click
       expect(page).to have_content "1"
-      expect(page).to_not have_css ".like"
+      expect(page).not_to have_css ".like"
     end
     # コメントを送信すると、コメントが表示されカウントが1になる
     find("#text_form").set("test comment")
@@ -46,11 +46,10 @@ RSpec.feature "Posts", type: :feature do
     expect(find("#comment_num_modal")).to have_content "1"
     # コメント削除ボタンを押すと、コメントが削除されカウントが0になる
     find(".comment_delete").click
-    expect(find("#comments_area")).to_not have_content "test comment"
     expect(find("#comment_num_modal")).to have_content "0"
     # 投稿削除ボタンを押すと、一覧ページの写真が無くなる
     find(".post_delete").click
-    page.driver.browser.switch_to.alert.accept 
+    page.driver.browser.switch_to.alert.accept
     expect(page.all(".photo_container").count).to eq 0
   end
 end

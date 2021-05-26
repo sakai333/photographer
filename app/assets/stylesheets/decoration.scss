@@ -57,14 +57,14 @@
   left: 50%;
   transform: translateX(calc(-50% - 7px));
   .post_btn{
-    background-color:rgba(255,255,255,0.6);
+    background-color:rgba(225,225,225,0.5);
     width: 5rem;
     height: 5rem;
     margin: 0 auto;
     border-radius: 50%;
     text-align: center;
     &:hover{
-      background-color:rgba(255,255,255,0.8);
+      background-color:rgba(225,225,225,0.8);
       transition: 0.2s;
     }
     i{

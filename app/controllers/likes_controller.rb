@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   before_action :set_like
-  
+
   def create
     current_user.likes.create(post_id: params[:post_id])
   end
@@ -10,7 +10,7 @@ class LikesController < ApplicationController
   end
 
   private
-  
+
   def set_like
     @post = Post.find(params[:post_id])
   end

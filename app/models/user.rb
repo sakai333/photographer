@@ -14,17 +14,17 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_posts, through: :likes, source: :post
-  has_many :active_relationships, class_name:  "Relationship",
+  has_many :active_relationships, class_name: "Relationship",
                                   foreign_key: "follower_id",
                                   dependent: :destroy
-  has_many :passive_relationships, class_name:  "Relationship",
-                                  foreign_key: "followed_id",
-                                  dependent:   :destroy
+  has_many :passive_relationships, class_name: "Relationship",
+                                   foreign_key: "followed_id",
+                                   dependent: :destroy
   has_many :following, through: :active_relationships, source: :followed
-  has_many :followers, through: :passive_relationships  
+  has_many :followers, through: :passive_relationships
   has_many :contests, dependent: :destroy
   has_many :topics, dependent: :destroy
-  has_many :votes, dependent: :destroy                         
+  has_many :votes, dependent: :destroy
   accepts_nested_attributes_for :genre_users, allow_destroy: true
 
   # ユーザーをフォローする
@@ -44,7 +44,6 @@ class User < ApplicationRecord
 
   # ユーザーのステータスフィードを返す
   def feed
-    Post.where("user_id IN (:following_ids) OR user_id = :user_id",
-    following_ids: following_ids, user_id: id)
+    Post.where("user_id IN (:following_ids) OR user_id = :user_id", following_ids: following_ids, user_id: id)
   end
 end

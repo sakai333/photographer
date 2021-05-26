@@ -21,6 +21,7 @@ RSpec.describe PostsController, type: :controller do
         expect(response).to have_http_status "200"
       end
     end
+
     # 認可されていないユーザーとして
     context "as an unauthorized user" do
       # ログインページにリダイレクトすること

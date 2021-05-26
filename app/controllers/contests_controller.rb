@@ -1,5 +1,5 @@
 class ContestsController < ApplicationController
-  before_action :timepass,only:[:index]
+  before_action :timepass, only: [:index]
   before_action :logged_in_user
 
   def index
@@ -36,5 +36,4 @@ class ContestsController < ApplicationController
   def contest_params
     params.require(:contest).permit(:name, :image, :period, :condition)
   end
-  
 end

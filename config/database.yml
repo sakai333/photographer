@@ -4,6 +4,7 @@ default: &default
   pool: 5
   username: postgres
   password: postgres
+  host: db
 
 production:
   <<: *default
@@ -14,7 +15,6 @@ production:
 
 development:
   <<: *default
-  host: db
   database: myapp_development
 
 test:

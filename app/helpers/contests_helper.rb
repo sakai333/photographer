@@ -12,6 +12,6 @@ module ContestsHelper
           p.save
         end
       end
-    end 
+    end
   end
 end

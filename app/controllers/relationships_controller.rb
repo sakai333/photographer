@@ -4,7 +4,7 @@ class RelationshipsController < ApplicationController
     current_user.follow(@user)
     render :follow
   end
-  
+
   def unfollow
     @user = User.find(params[:id])
     current_user.unfollow(@user)
