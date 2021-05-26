@@ -22,8 +22,8 @@ services:
     build:
       context: .
     # =========ローカルと本番切り替え===========
-    # command: bundle exec puma -C config/puma.rb -e production
-    command: bundle exec puma -C config/puma.rb
+    command: bundle exec puma -C config/puma.rb -e production
+    # command: bundle exec puma -C config/puma.rb
     # ======================================  
     volumes:
       - .:/myapp
@@ -33,16 +33,16 @@ services:
     networks:
       - myapp-network
   #=========ローカルと本番切り替え===========    
-    depends_on:
-      - db
-  db:
-    image: postgres
-    environment:
-      POSTGRES_PASSWORD: 'postgres'
-    volumes:
-      - ./tmp/db:/var/lib/postgresql/data
-    networks:
-      - myapp-network
+  #   depends_on:
+  #     - db
+  # db:
+  #   image: postgres
+  #   environment:
+  #     POSTGRES_PASSWORD: 'postgres'
+  #   volumes:
+  #     - ./tmp/db:/var/lib/postgresql/data
+  #   networks:
+  #     - myapp-network
   #=========ローカルと本番切り替え===========    
   web:
     build:
