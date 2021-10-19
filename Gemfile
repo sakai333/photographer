@@ -22,7 +22,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.6.0'
   gem "factory_bot_rails", "~> 4.10.0"
-  # gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -37,9 +37,5 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'webdrivers', require: !ENV['SELENIUM_DRIVER_URL']
 end
-
-# group :production do
-#   gem 'pg'
-# end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
