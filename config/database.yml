@@ -9,6 +9,7 @@ default: &default
 production:
   <<: *default
   database: myapp_production
+  host: localhost
 
 development:
   <<: *default
