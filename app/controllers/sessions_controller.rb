@@ -14,9 +14,9 @@ class SessionsController < ApplicationController
   end
 
   def create_guest
-    user = User.find_by(email: 'guest@example.com')
+    user = User.find_by(email: 'guest@example.com') || User.create(name: "Guest User", email: "guest@example.com", password: "guestuser")
     log_in user
-    redirect_to user_path(user.id)
+    redirect_to posts_path
   end
 
   def destroy
