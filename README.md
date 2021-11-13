@@ -1,6 +1,8 @@
 # Photographer
 Photographerは写真好きのためのコミュニティーサイトです。  
 写真投稿・閲覧機能に加えて、誰でも気軽に開催・投票できるコンテスト機能、写真レビューや質問ができる掲示板機能を実装しています。
+<img width="1738" alt="7e8a7f6a-9be1-43f7-ac9e-26fa502e161d" src="https://user-images.githubusercontent.com/61400888/141602525-2306fa00-ba4d-472f-ae44-69f40e14ffad.png">
+
 
 ## URL
 https://photographer-sk.herokuapp.com/
