@@ -8,10 +8,7 @@ default: &default
 
 production:
   <<: *default
-  database: <%= ENV['DB_DATABASE'] %>
-  host: <%= ENV['DB_HOST'] %>
-  username: <%= ENV['DB_USERNAME'] %>
-  password: <%= ENV['DB_PASSWORD'] %>
+  database: myapp_production
 
 development:
   <<: *default
